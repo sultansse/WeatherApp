@@ -21,13 +21,13 @@ class MainActivity : AppCompatActivity() {
 
         binding.bottomNavigationView.setOnItemSelectedListener {
 
-            when(it.itemId){
+            when (it.itemId) {
                 R.id.home -> replaceFragment(HomeFragment())
                 R.id.news -> replaceFragment(NewsFragment())
                 R.id.search -> replaceFragment(SearchFragment())
                 R.id.about -> replaceFragment(AboutFragment())
 
-                else ->{
+                else -> {
 
                 }
             }
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun replaceFragment(fragment: Fragment){
+    private fun replaceFragment(fragment: Fragment) {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.frame_layout, fragment)
