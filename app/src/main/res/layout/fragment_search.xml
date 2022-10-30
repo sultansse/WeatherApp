@@ -1,17 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="12dp"
+    android:orientation="vertical"
     tools:context=".SearchFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/search"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Search Fragment"
-        android:textSize="26dp"
-        android:layout_gravity="center"/>
+        android:weightSum="100"
+        android:orientation="horizontal">
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="0dp"
+        android:layout_weight="70"
+        android:layout_height="45dp"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/border_edittext"
+        android:hint="City Name"/>
+    
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="0dp"
+        android:layout_weight="30"
+        android:text="Search"
+        android:background="@drawable/border_edittext"
+        android:layout_height="45dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="40dp">
+        
+        <ImageView
+            android:id="@+id/iconWeather"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/weathericon" />
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:text="20 °C"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:text="Kaskelen, KZ"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/DailyWeather"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>
