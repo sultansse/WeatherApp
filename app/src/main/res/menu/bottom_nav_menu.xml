@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <item android:title="Home"
+    <item
+        android:id="@+id/homeFragment"
         android:icon="@drawable/ic_baseline_home_24"
-        android:id="@+id/home"/>
-    <item android:title="News"
+        android:title="Home"
+        tools:ignore="HardcodedText" />
+    <item
+        android:id="@+id/newsFragment"
         android:icon="@drawable/ic_baseline_newspaper_24"
-        android:id="@+id/news"/>
-    <item android:title="Search"
+        android:title="News"
+        tools:ignore="HardcodedText" />
+    <item
+        android:id="@+id/searchFragment"
         android:icon="@drawable/ic_baseline_search_24"
-        android:id="@+id/search"/>
-    <item android:title="About"
+        android:title="Search"
+        tools:ignore="HardcodedText" />
+    <item
+        android:id="@+id/aboutFragment"
         android:icon="@drawable/ic_baseline_info_24"
-        android:id="@+id/about"/>
+        android:title="About"
+        tools:ignore="HardcodedText" />
 </menu>
