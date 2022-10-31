@@ -4,6 +4,15 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="news_fragment">News Fragment</string>
     <string name="search">Search</string>
-    <string name="todo">TODO</string>
     <string name="city_name">City Name</string>
+    
+    <string-array name="DailyWeather">
+        <item>Алматы</item>
+        <item>Астана</item>
+        <item>Талдыкорган</item>
+        <item>Шымкент</item>
+        <item>Конаев</item>
+        <item>Туркистан</item>
+    </string-array>
+
 </resources>
