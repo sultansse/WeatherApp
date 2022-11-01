@@ -41,8 +41,8 @@ class SearchFragment : Fragment() {
 
         val search = view.findViewById<SearchView>(R.id.searchView)
         val listView = view.findViewById<ListView>(R.id.listView)
-        val names = arrayOf("Alamty", "Kaskelen", "Shymkent", "Astana", "Konaev", "Konaev", "Taldykorgan", "Balkash", "Shamalgan",
-            "Zhezkazgan", "Rudnyi", "Aktobe", "Aktau")
+        val names = arrayOf("Almaty", "Kaskelen", "Shymkent", "Astana", "Konaev", "Konaev", "Taldykorgan", "Balkash", "Shamalgan",
+            "Zhezkazgan", "Rudnyi", "Aktobe", "Aktau", "Kyzylorda")
 
         val adapter: ArrayAdapter<String> = ArrayAdapter(
             requireContext(),
