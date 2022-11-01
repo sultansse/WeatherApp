@@ -45,6 +45,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/today_temperature" />
 
+    <!--    properties   -->
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/properties"
         android:layout_width="wrap_content"
@@ -68,28 +70,14 @@
         android:id="@+id/humidity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:drawablePadding="2dp"
-        android:text="6 %"
+        android:layout_marginHorizontal="42dp"
+        android:drawablePadding="5dp"
+        android:text="6%"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:drawableStartCompat="@drawable/humidity"
         app:layout_constraintBottom_toBottomOf="@+id/propertiesBlock"
-        app:layout_constraintEnd_toStartOf="@+id/pressure"
-        app:layout_constraintTop_toTopOf="@+id/properties" />
-
-    <TextView
-        android:id="@+id/pressure"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawablePadding="2dp"
-        android:text="90%"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:drawableStartCompat="@drawable/pressure"
-        app:layout_constraintBottom_toBottomOf="@+id/propertiesBlock"
-        app:layout_constraintEnd_toEndOf="@+id/propertiesBlock"
-        app:layout_constraintStart_toStartOf="@+id/propertiesBlock"
+        app:layout_constraintEnd_toStartOf="@+id/windiness"
         app:layout_constraintTop_toTopOf="@+id/properties" />
 
     <TextView
@@ -97,25 +85,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:drawablePadding="2dp"
-        android:text="14 km/h"
+        android:drawablePadding="5dp"
+        android:text="14km/h"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:drawableStartCompat="@drawable/windiness"
+        app:layout_constraintHorizontal_bias="0.42"
         app:layout_constraintBottom_toBottomOf="@+id/propertiesBlock"
-        app:layout_constraintStart_toEndOf="@+id/pressure"
+        app:layout_constraintEnd_toEndOf="@+id/propertiesBlock"
+        app:layout_constraintStart_toStartOf="@+id/propertiesBlock"
+        app:layout_constraintTop_toTopOf="@+id/propertiesBlock" />
+
+
+    <TextView
+        android:id="@+id/pressure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="42dp"
+        android:drawablePadding="5dp"
+        android:text="90%"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:drawableStartCompat="@drawable/pressure"
+        app:layout_constraintBottom_toBottomOf="@+id/propertiesBlock"
+        app:layout_constraintStart_toEndOf="@+id/windiness"
         app:layout_constraintTop_toTopOf="@+id/properties" />
+
+
+    <!--    today after hours detail temperature-->
 
     <View
         android:id="@+id/todayDetails"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="160dp"
         android:layout_marginHorizontal="18dp"
         android:layout_marginTop="28dp"
         android:alpha="30"
         android:background="@drawable/background_block"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/propertiesBlock" />
 
