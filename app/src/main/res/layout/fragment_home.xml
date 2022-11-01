@@ -52,41 +52,62 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.54" />
 
-<!--    <androidx.cardview.widget.CardView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="30dp"-->
-<!--        android:layout_marginHorizontal="18dp"-->
-<!--        android:background="@android:color/transparent"-->
-<!--        app:cardBackgroundColor="@color/backgroundTransparent"-->
-<!--        app:cardCornerRadius="50dp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/properties">-->
+    <ImageView
+        android:id="@+id/propertiesBlock"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginHorizontal="18dp"
+        android:background="@color/backgroundTransparent"
 
-<!--        <TextView-->
-<!--            android:id="@+id/humidity"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:textSize="18sp"-->
-<!--            android:text="Humidity: 6 %"-->
-<!--            android:textColor="@color/white" />-->
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/properties"
+        tools:ignore="ContentDescription">
 
-<!--        <TextView-->
-<!--            android:id="@+id/pressure"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:textSize="18sp"-->
-<!--            android:text="Pressure: 90% pa"-->
-<!--            android:textColor="@color/white" />-->
+    </ImageView>
 
-<!--        <TextView-->
-<!--            android:id="@+id/windiness"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:textSize="18sp"-->
-<!--            android:text="Windiness: 14 km/h"-->
-<!--            android:textColor="@color/white" />-->
-<!--    </androidx.cardview.widget.CardView>-->
+    <TextView
+        android:id="@+id/humidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:drawablePadding="2dp"
+        android:text="6 %"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:drawableStartCompat="@drawable/humidity"
+        app:layout_constraintBottom_toBottomOf="@+id/propertiesBlock"
+        app:layout_constraintEnd_toStartOf="@+id/pressure"
+        app:layout_constraintTop_toTopOf="@+id/properties" />
+
+    <TextView
+        android:id="@+id/pressure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="2dp"
+        android:text="90% pa"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:drawableStartCompat="@drawable/pressure"
+        app:layout_constraintBottom_toBottomOf="@+id/propertiesBlock"
+        app:layout_constraintEnd_toEndOf="@+id/propertiesBlock"
+        app:layout_constraintStart_toStartOf="@+id/propertiesBlock"
+        app:layout_constraintTop_toTopOf="@+id/properties" />
+
+    <TextView
+        android:id="@+id/windiness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:drawablePadding="2dp"
+        android:text="14 km/h"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:drawableStartCompat="@drawable/windiness"
+        app:layout_constraintBottom_toBottomOf="@+id/propertiesBlock"
+        app:layout_constraintStart_toEndOf="@+id/pressure"
+        app:layout_constraintTop_toTopOf="@+id/properties" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
