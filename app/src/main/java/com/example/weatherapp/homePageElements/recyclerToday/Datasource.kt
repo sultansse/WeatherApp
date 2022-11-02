@@ -1,7 +1,6 @@
 package com.example.weatherapp.homePageElements.recyclerToday;
 
-import android.view.View
-import com.example.weatherapp.R;
+import com.example.weatherapp.R
 
 class Datasource {
 
@@ -9,13 +8,41 @@ class Datasource {
         val res = mutableListOf<Affirmation>()
         res.addAll(
             listOf(
-                Affirmation(R.string.temperature_per_hour,R.id.weatherIconPerHour,R.string.each_time_today),
-                Affirmation(R.string.temperature_per_hour,R.id.weatherIconPerHour,R.string.each_time_today),
-                Affirmation(R.string.temperature_per_hour,R.id.weatherIconPerHour,R.string.each_time_today),
-                Affirmation(R.string.temperature_per_hour,R.id.weatherIconPerHour,R.string.each_time_today),
-                Affirmation(R.string.temperature_per_hour,R.id.weatherIconPerHour,R.string.each_time_today),
-                Affirmation(R.string.temperature_per_hour,R.id.weatherIconPerHour,R.string.each_time_today),
-                Affirmation(R.string.temperature_per_hour,R.id.weatherIconPerHour,R.string.each_time_today)
+                Affirmation(
+                    R.string.temperature_per_hour,
+//                    R.id.weatherIconPerHour,
+                    R.string.each_time_today
+                ),
+                Affirmation(
+                    R.string.temperature_per_hour,
+//                    R.id.weatherIconPerHour,
+                    R.string.each_time_today
+                ),
+                Affirmation(
+                    R.string.temperature_per_hour,
+//                    R.id.weatherIconPerHour,
+                    R.string.each_time_today
+                ),
+                Affirmation(
+                    R.string.temperature_per_hour,
+//                    R.id.weatherIconPerHour,
+                    R.string.each_time_today
+                ),
+                Affirmation(
+                    R.string.temperature_per_hour,
+//                    R.id.weatherIconPerHour,
+                    R.string.each_time_today
+                ),
+                Affirmation(
+                    R.string.temperature_per_hour,
+//                    R.id.weatherIconPerHour,
+                    R.string.each_time_today
+                ),
+                Affirmation(
+                    R.string.temperature_per_hour,
+//                    R.id.weatherIconPerHour,
+                    R.string.each_time_today
+                )
             )
         )
         return res

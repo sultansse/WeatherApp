@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:contentDescription="image of current weather"
-        android:src="@drawable/Sun_cloud_angled_rain"
+        android:src="@drawable/sun_cloud_angled_rain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

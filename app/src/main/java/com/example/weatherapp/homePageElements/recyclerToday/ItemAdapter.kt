@@ -1,44 +1,42 @@
 package com.example.weatherapp.homePageElements.recyclerToday
 
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.weatherapp.HomeFragment
 import com.example.weatherapp.R
 
 
 class ItemAdapter(
-    private val context: Context,
-    private val dataset: List<Affirmation>
+    private val context: HomeFragment,
+    private val dataset: MutableList<Affirmation>
 ) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
-    // Provide a reference to the views for each data item
-    // Complex data items may need more than one view per item, and
-    // you provide access to all the views for a data item in a view holder.
-    // Each data item is just an Affirmation object.
     class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
-        val textView: TextView = view.findViewById(R.id.item_title)
+        val temperaturePerHour: TextView = view.findViewById(R.id.tempOfTime)
+//        val weatherIconPerHour: ImageView = view.findViewById(R.id.weatherIconPerHour)
+        val eachTimeToday: TextView = view.findViewById(R.id.timeForToday)
     }
 
-    /**
-     * Create new views (invoked by the layout manager)
-     */
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        // create a new view
-        val adapterLayout = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
+
+        val adapterLayout =
+            LayoutInflater.from(parent.context).inflate(R.layout.item_today_details, parent, false)
 
         return ItemViewHolder(adapterLayout)
     }
 
-    /**
-     * Replace the contents of a view (invoked by the layout manager)
-     */
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
-        holder.textView.text = context.resources.getString(item.stringResourceId)
+
+        holder.temperaturePerHour.text = context.resources.getString(item.tempOfTime)
+//        holder.weatherIconPerHour.setImageResource(item.weatherIconPerHour)
+        holder.eachTimeToday.text = context.resources.getString(item.timeForToday)
     }
 
     /**
