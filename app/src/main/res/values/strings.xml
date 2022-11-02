@@ -17,4 +17,9 @@
 
     <string name="temperature">28°</string>
     <string name="temperature_description">Precipitations</string>
+    <string name="temperature_per_hour">24°C</string>
+    <string name="each_time_today">14:00</string>
+
+
+
 </resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardViewBlock"
+    android:layout_width="80dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    card_view:cardBackgroundColor="@color/blueBackgroundTransparent"
+    card_view:cardCornerRadius="12dp">
+
+    <TextView
+        android:id="@+id/tempOfTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_margin="4dp"
+        android:text="@string/temperature_per_hour"
+        android:textColor="@color/white"
+        android:textSize="22sp" />
+
+    <ImageView
+        android:id="@+id/weatherIconPerHour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/sunny"
+        tools:ignore="ContentDescription">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/timeForToday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_margin="4dp"
+        android:text="@string/each_time_today"
+        android:textColor="@color/white"
+        android:layout_marginStart="15dp"
+        android:textSize="22sp" />
+
+
+</androidx.cardview.widget.CardView>
