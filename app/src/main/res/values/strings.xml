@@ -14,7 +14,16 @@
         <item>Конаев</item>
         <item>Туркистан</item>
     </string-array>
-
-    <string name="temperature">28°</string>
+<!--homepage main data-->
+    <string name="temperature">28°C</string>
     <string name="temperature_description">Precipitations</string>
+    <!--homepage first recyclerview-->
+    <string name="temperature_per_hour">24°C</string>
+    <string name="each_time_today">14:00</string>
+    <!--homepage second recyclerview-->
+    <string name="dayOfWeek">Monday</string>
+    <string name="dayTempOfDayWeek">13°C</string>
+    <string name="nightTempOfDayWeek">4°C</string>
+
+
 </resources>
