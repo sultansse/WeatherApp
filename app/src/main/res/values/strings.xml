@@ -17,4 +17,6 @@
 
     <string name="temperature">28°</string>
     <string name="temperature_description">Precipitations</string>
+    <string name="kaskelen_kz">Kaskelen, KZ</string>
+    <string name="_20_c">20 °C</string>
 </resources>
