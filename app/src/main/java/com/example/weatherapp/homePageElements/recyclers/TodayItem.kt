@@ -1,6 +1,6 @@
-package com.example.weatherapp.homePageElements.recyclerToday
+package com.example.weatherapp.homePageElements.recyclers
 
-data class Affirmation(
+data class TodayItem(
     val tempOfTime: Int,
 //    val weatherIconPerHour: Int,
     val timeForToday: Int

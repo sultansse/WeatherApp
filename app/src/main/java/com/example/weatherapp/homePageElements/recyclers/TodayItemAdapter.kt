@@ -1,20 +1,21 @@
-package com.example.weatherapp.homePageElements.recyclerToday
+package com.example.weatherapp.homePageElements.recyclers
 
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherapp.HomeFragment
 import com.example.weatherapp.R
 
 
-class ItemAdapter(
+class TodayItemAdapter(
     private val context: HomeFragment,
-    private val dataset: MutableList<Affirmation>
-) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
+    private val todayDataset: MutableList<TodayItem>
+) : RecyclerView.Adapter<TodayItemAdapter.ItemViewHolder>() {
+
+
 
     class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         val temperaturePerHour: TextView = view.findViewById(R.id.tempOfTime)
@@ -32,15 +33,13 @@ class ItemAdapter(
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        val item = dataset[position]
+        val item = todayDataset[position]
 
         holder.temperaturePerHour.text = context.resources.getString(item.tempOfTime)
 //        holder.weatherIconPerHour.setImageResource(item.weatherIconPerHour)
         holder.eachTimeToday.text = context.resources.getString(item.timeForToday)
     }
 
-    /**
-     * Return the size of your dataset (invoked by the layout manager)
-     */
-    override fun getItemCount() = dataset.size
+
+    override fun getItemCount() = todayDataset.size
 }

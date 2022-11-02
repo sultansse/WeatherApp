@@ -174,9 +174,9 @@
         <View
             android:id="@+id/weekBlock"
             android:layout_width="match_parent"
-            android:layout_height="360dp"
+            android:layout_height="460dp"
             android:layout_marginHorizontal="18dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="38dp"
             android:layout_marginBottom="80dp"
             android:alpha="30"
             android:background="@drawable/background_block"
@@ -190,7 +190,7 @@
             android:id="@+id/nextForecastText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="12dp"
+            android:layout_margin="14dp"
             android:text="Next Forecast"
             android:textColor="@color/white"
             android:textSize="18sp"
@@ -214,19 +214,21 @@
         <!--            app:layout_constraintTop_toTopOf="@+id/todayDetailsBlock">-->
         <!--        </TextView>-->
 
-        <!--        <androidx.recyclerview.widget.RecyclerView-->
-        <!--            android:id="@+id/weekDaysDetails"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginHorizontal="30dp"-->
-        <!--            android:orientation="vertical"-->
-        <!--            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
-        <!--            app:layout_constraintBottom_toBottomOf="@+id/weekBlock"-->
-        <!--            app:layout_constraintEnd_toEndOf="@+id/weekBlock"-->
-        <!--            app:layout_constraintStart_toStartOf="@+id/weekBlock"-->
-        <!--            app:layout_constraintTop_toBottomOf="@+id/nextForecastText"-->
-        <!--            tools:listitem="@layout/item_today_details">-->
-        <!--        </androidx.recyclerview.widget.RecyclerView>-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/weekDaysDetailsRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="@+id/weekBlock"
+            app:layout_constraintEnd_toEndOf="@+id/weekBlock"
+            app:layout_constraintStart_toStartOf="@+id/weekBlock"
+            app:layout_constraintTop_toBottomOf="@id/nextForecastText"
+            tools:listitem="@layout/item_week_details">
+
+        </androidx.recyclerview.widget.RecyclerView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
