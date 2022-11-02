@@ -57,6 +57,10 @@ class Datasource {
                 WeekItem(R.string.dayOfWeek,/*R.id.weatherIconPerHour,*/R.string.dayTempOfDayWeek,R.string.nightTempOfDayWeek),
                 WeekItem(R.string.dayOfWeek,/*R.id.weatherIconPerHour,*/R.string.dayTempOfDayWeek,R.string.nightTempOfDayWeek),
                 WeekItem(R.string.dayOfWeek,/*R.id.weatherIconPerHour,*/R.string.dayTempOfDayWeek,R.string.nightTempOfDayWeek),
+                WeekItem(R.string.dayOfWeek,/*R.id.weatherIconPerHour,*/R.string.dayTempOfDayWeek,R.string.nightTempOfDayWeek),
+                WeekItem(R.string.dayOfWeek,/*R.id.weatherIconPerHour,*/R.string.dayTempOfDayWeek,R.string.nightTempOfDayWeek),
+                WeekItem(R.string.dayOfWeek,/*R.id.weatherIconPerHour,*/R.string.dayTempOfDayWeek,R.string.nightTempOfDayWeek),
+                WeekItem(R.string.dayOfWeek,/*R.id.weatherIconPerHour,*/R.string.dayTempOfDayWeek,R.string.nightTempOfDayWeek),
                 WeekItem(R.string.dayOfWeek,/*R.id.weatherIconPerHour,*/R.string.dayTempOfDayWeek,R.string.nightTempOfDayWeek)
             )
         )
