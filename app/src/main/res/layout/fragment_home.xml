@@ -1,177 +1,232 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/bLueBackground"
-    android:orientation="vertical"
-    tools:context=".HomeFragment">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:contentDescription="image of current weather"
-        android:src="@drawable/sun_cloud_angled_rain"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="HardcodedText">
-
-    </ImageView>
-
-    <TextView
-        android:id="@+id/today_temperature"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/temperature"
-        android:textColor="@color/white"
-        android:textSize="64sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <TextView
-        android:id="@+id/today_descriptionOfTemp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/temperature_description"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/today_temperature" />
-
-
-
-    <!--    properties   -->
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/properties"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.54" />
-
-    <View
-        android:id="@+id/propertiesBlock"
-        android:layout_width="match_parent"
-        android:layout_height="38dp"
-        android:layout_marginHorizontal="18dp"
-        android:alpha="30"
-        android:background="@drawable/background_block"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/properties" />
-
-    <TextView
-        android:id="@+id/humidity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="42dp"
-        android:drawablePadding="5dp"
-        android:text="6%"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:drawableStartCompat="@drawable/humidity"
-        app:layout_constraintBottom_toBottomOf="@+id/propertiesBlock"
-        app:layout_constraintEnd_toStartOf="@+id/windiness"
-        app:layout_constraintTop_toTopOf="@+id/properties" />
-
-    <TextView
-        android:id="@+id/windiness"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:drawablePadding="5dp"
-        android:text="14km/h"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:drawableStartCompat="@drawable/windiness"
-        app:layout_constraintBottom_toBottomOf="@+id/propertiesBlock"
-        app:layout_constraintEnd_toEndOf="@+id/propertiesBlock"
-        app:layout_constraintHorizontal_bias="0.42"
-        app:layout_constraintStart_toStartOf="@+id/propertiesBlock"
-        app:layout_constraintTop_toTopOf="@+id/propertiesBlock" />
-
-
-    <TextView
-        android:id="@+id/pressure"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="42dp"
-        android:drawablePadding="5dp"
-        android:text="90%"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:drawableStartCompat="@drawable/pressure"
-        app:layout_constraintBottom_toBottomOf="@+id/propertiesBlock"
-        app:layout_constraintStart_toEndOf="@+id/windiness"
-        app:layout_constraintTop_toTopOf="@+id/properties" />
-
-
-
-    <!--    today hours detail temperature-->
-    <View
-        android:id="@+id/todayDetailsBlock"
-        android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:layout_marginHorizontal="18dp"
-        android:layout_marginTop="28dp"
-        android:alpha="30"
-        android:background="@drawable/background_block"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/propertiesBlock" />
-
-
-    <TextView
-        android:id="@+id/todayJustText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="12dp"
-        android:text="Today"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/todayDetailsBlock"
-        app:layout_constraintTop_toTopOf="@+id/todayDetailsBlock">
-
-    </TextView>
-
-    <TextView
-        android:id="@+id/todayDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="12dp"
-        android:text="9th March"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/todayDetailsBlock"
-        app:layout_constraintTop_toTopOf="@+id/todayDetailsBlock">
-
-    </TextView>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/todayDetailsRecycler"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginHorizontal="30dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="@+id/todayDetailsBlock"
-        app:layout_constraintEnd_toEndOf="@+id/todayDetailsBlock"
-        app:layout_constraintStart_toStartOf="@+id/todayDetailsBlock"
-        app:layout_constraintTop_toBottomOf="@+id/todayJustText"
-        tools:listitem="@layout/item_today_details">
+        android:background="@color/bLueBackground"
+        android:orientation="vertical"
+        tools:context=".HomeFragment">
+
+        <ImageView
+            android:id="@+id/mainImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:contentDescription="image of current weather"
+            android:src="@drawable/sun_cloud_angled_rain"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/today_temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/temperature"
+            android:textColor="@color/white"
+            android:textSize="64sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mainImage" />
+
+        <TextView
+            android:id="@+id/today_descriptionOfTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/temperature_description"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/today_temperature" />
 
 
-    </androidx.recyclerview.widget.RecyclerView>
+        <!--    properties   -->
+        <View
+            android:id="@+id/propertiesBlock"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_marginHorizontal="18dp"
+            android:layout_marginTop="40dp"
+            android:alpha="30"
+            android:background="@drawable/background_block"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/today_descriptionOfTemp" />
+
+        <TextView
+            android:id="@+id/humidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="42dp"
+            android:drawablePadding="5dp"
+            android:text="6%"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:drawableStartCompat="@drawable/humidity"
+            app:layout_constraintBottom_toBottomOf="@+id/propertiesBlock"
+            app:layout_constraintEnd_toStartOf="@+id/windiness"
+            app:layout_constraintTop_toTopOf="@+id/propertiesBlock" />
+
+        <TextView
+            android:id="@+id/windiness"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:drawablePadding="5dp"
+            android:text="14km/h"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:drawableStartCompat="@drawable/windiness"
+            app:layout_constraintBottom_toBottomOf="@+id/propertiesBlock"
+            app:layout_constraintEnd_toEndOf="@+id/propertiesBlock"
+            app:layout_constraintHorizontal_bias="0.42"
+            app:layout_constraintStart_toStartOf="@+id/propertiesBlock"
+            app:layout_constraintTop_toTopOf="@+id/propertiesBlock" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/pressure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="42dp"
+            android:drawablePadding="5dp"
+            android:text="90%"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:drawableStartCompat="@drawable/pressure"
+            app:layout_constraintBottom_toBottomOf="@+id/propertiesBlock"
+            app:layout_constraintStart_toEndOf="@+id/windiness"
+            app:layout_constraintTop_toTopOf="@+id/propertiesBlock" />
+
+
+        <!--    today hours detail temperature-->
+        <View
+            android:id="@+id/todayDetailsBlock"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginHorizontal="18dp"
+            android:layout_marginTop="28dp"
+            android:alpha="30"
+            android:background="@drawable/background_block"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/propertiesBlock" />
+
+
+        <TextView
+            android:id="@+id/todayJustText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:text="Today"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/todayDetailsBlock"
+            app:layout_constraintTop_toTopOf="@+id/todayDetailsBlock">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/todayDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:text="9th March"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/todayDetailsBlock"
+            app:layout_constraintTop_toTopOf="@+id/todayDetailsBlock">
+
+        </TextView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/todayDetailsRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="@+id/todayDetailsBlock"
+            app:layout_constraintEnd_toEndOf="@+id/todayDetailsBlock"
+            app:layout_constraintStart_toStartOf="@+id/todayDetailsBlock"
+            app:layout_constraintTop_toBottomOf="@+id/todayJustText"
+            tools:listitem="@layout/item_today_details">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+        <!--    week  temperature-->
+        <View
+            android:id="@+id/weekBlock"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginHorizontal="18dp"
+            android:layout_marginTop="28dp"
+            android:alpha="30"
+            android:background="@drawable/background_block"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/todayDetailsBlock" />
+
+        <TextView
+            android:id="@+id/nextForecastText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:layout_marginStart="38dp"
+            android:text="Next Forecast"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/weekBlock"
+            app:layout_constraintTop_toTopOf="@+id/weekBlock"
+            tools:ignore="HardcodedText">
+
+        </TextView>
+
+<!--        here will be calendar icon that show calendar dynamically -->
+<!--        <TextView-->
+<!--            android:id="@+id/todayDate"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="12dp"-->
+<!--            android:text="9th March"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="18sp"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/todayDetailsBlock"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/todayDetailsBlock">-->
+
+<!--        </TextView>-->
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/weekDaysDetails"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="30dp"-->
+<!--            android:orientation="vertical"-->
+<!--            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/weekBlock"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/weekBlock"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/weekBlock"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/nextForecastText"-->
+<!--            tools:listitem="@layout/item_today_details">-->
+
+<!--        </androidx.recyclerview.widget.RecyclerView>-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
