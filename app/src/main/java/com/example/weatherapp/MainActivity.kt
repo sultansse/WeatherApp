@@ -1,10 +1,7 @@
 package com.example.weatherapp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import androidx.fragment.app.FragmentContainerView
-import androidx.navigation.findNavController
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -35,7 +32,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.homeFragment,
                 R.id.newsFragment,
                 R.id.searchFragment,
-                R.id.aboutFragment
+                R.id.aboutFragment,
+                R.id.settingsFragment
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

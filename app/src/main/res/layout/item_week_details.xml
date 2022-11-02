@@ -55,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
         android:text="@string/nightTempOfDayWeek"
-        android:textColor="@color/material_dynamic_neutral_variant80"
+        android:textColor="#FFC0C7CD"
         android:textSize="20sp"
         card_view:layout_constraintBottom_toBottomOf="parent"
         card_view:layout_constraintEnd_toEndOf="parent"
