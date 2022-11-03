@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    tools:background="#FF018685"
     android:orientation="vertical">
-    <!--    android:background="@color/teal_200"-->
+
     <TextView
         android:id="@+id/dayOfWeek"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
+        android:fontFamily="@font/maven_pro_medium"
         android:text="@string/dayOfWeek"
         android:textColor="@color/white"
         android:textSize="20sp"
@@ -21,9 +23,9 @@
 
     <ImageView
         android:id="@+id/weatherIconPerHour"
-        android:paddingTop="7dp"
         android:layout_width="92dp"
         android:layout_height="78dp"
+        android:paddingTop="7dp"
         android:scaleX="1.5"
         android:scaleY="1.5"
         android:src="@drawable/cloudy"

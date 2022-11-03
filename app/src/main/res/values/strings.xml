@@ -14,32 +14,22 @@
         <item>Конаев</item>
         <item>Туркистан</item>
     </string-array>
-    <!--homepage main data-->
-    <string name="temperature">28°C</string>
+
+
+    <!-- changeable temp type for all pages-->
+    <string name="temperature_format_c">%d°C</string>
+    <string name="temperature_format_f">%d°F</string>
+
+
     <string name="temperature_description">Precipitations</string>
     <!--homepage first recyclerview-->
-    <string name="temperature_per_hour">24°C</string>
+    <string name="temperature_per_hour">24</string>
     <string name="each_time_today">14:00</string>
     <!--homepage second recyclerview-->
     <string name="dayOfWeek">Monday</string>
     <string name="dayTempOfDayWeek">13°C</string>
     <string name="nightTempOfDayWeek">4°C</string>
-    <!-- Preference Titles -->
-    <string name="messages_header">Messages</string>
-    <string name="sync_header">Sync</string>
-
-    <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
-    <string name="reply_title">Default reply action</string>
-
-    <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
-    </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
-
-
+    <!--search fragment's text -->
     <string name="kaskelen_kz">Kaskelen, KZ</string>
     <string name="_20_c">20 °C</string>
 </resources>
