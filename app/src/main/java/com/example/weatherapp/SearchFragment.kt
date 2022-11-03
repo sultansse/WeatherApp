@@ -5,10 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.ListView
-import android.widget.SearchView
-import android.widget.Toast
+import android.widget.*
+
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -41,8 +39,23 @@ class SearchFragment : Fragment() {
 
         val search = view.findViewById<SearchView>(R.id.searchView)
         val listView = view.findViewById<ListView>(R.id.listView)
-        val names = arrayOf("Alamty", "Kaskelen", "Shymkent", "Astana", "Konaev", "Konaev", "Taldykorgan", "Balkash", "Shamalgan",
-            "Zhezkazgan", "Rudnyi", "Aktobe", "Aktau")
+        val names = arrayOf("Абай", "Акколь", "Аксай", "Аксу", "Актау", "Актобе",
+            "Алга", "Алматы", "Алтай", "Аральск", "Аркалык", "Арыс",
+            "Астана", "Атбасар", "Атырау", "Аягоз", "Байконур",
+            "Балхаш", "Булаево", "Державинск", "Ерейментау",
+            "Есик", "Есиль", "Жанаозен", "Жанатас", "Жаркент",
+            "Жезказган", "Жем", "Жетысай", "Житикара", "Зайсан",
+            "Казалинск", "Кандыагаш", "Караганда", "Каражал",
+            "Каратау", "Каркаралинск", "Каскелен", "Кентау",
+            "Кокшетау", "Конаев", "Костанай", "Косшы", "Кульсары",
+            "Курчатов", "Кызылорда", "Ленгер", "Лисаковск", "Макинск",
+            "Мамлютка", "Павлодар", "Петропавловск", "Приозёрск", "Риддер",
+            "Рудный", "Сарань", "Сарканд", "Сарыагаш", "Сатпаев", "Семей",
+            "Сергеевка", "Серебрянск", "Степногорск", "Степняк", "Тайынша",
+            "Талгар", "Талдыкорган", "Тараз", "Текели", "Темир", "Темиртау",
+            "Тобыл", "Туркестан", "Уральск", "Усть-Каменогорск", "Ушарал",
+            "Уштобе", "Форт-Шевченко", "Хромтау", "Шалкар", "Шар", "Шардара",
+            "Шахтинск", "Шемонаиха", "Шу", "Шымкент", "Щучинск", "Экибастуз")
 
         val adapter: ArrayAdapter<String> = ArrayAdapter(
             requireContext(),
