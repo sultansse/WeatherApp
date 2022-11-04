@@ -1,11 +1,11 @@
-package com.example.weatherapp
+package com.example.weatherapp.view.settingsPage
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ToggleButton
 import androidx.fragment.app.Fragment
+import com.example.weatherapp.R
 import com.example.weatherapp.databinding.ActivityMainBinding
 import com.example.weatherapp.databinding.FragmentSettingsBinding
 

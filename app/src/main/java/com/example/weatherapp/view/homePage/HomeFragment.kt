@@ -1,4 +1,4 @@
-package com.example.weatherapp
+package com.example.weatherapp.view.homePage
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -8,9 +8,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
-import com.example.weatherapp.homePageElements.recyclers.Datasource
-import com.example.weatherapp.homePageElements.recyclers.TodayItemAdapter
-import com.example.weatherapp.homePageElements.recyclers.WeekItemAdapter
+import com.example.weatherapp.R
+import com.example.weatherapp.view.homePage.recyclers.Datasource
+import com.example.weatherapp.view.homePage.recyclers.TodayItemAdapter
+import com.example.weatherapp.view.homePage.recyclers.WeekItemAdapter
 
 class HomeFragment : Fragment() {
 

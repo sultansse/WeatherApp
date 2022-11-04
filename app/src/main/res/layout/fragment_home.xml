@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/gradient"
         android:orientation="vertical"
-        tools:context=".HomeFragment">
+        tools:context=".view.homePage.HomeFragment">
 
         <ImageView
             android:id="@+id/mainImage"
