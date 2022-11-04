@@ -1,4 +1,4 @@
-package com.example.weatherapp.homePageElements.recyclers;
+package com.example.weatherapp.view.homePage.recyclers;
 
 import com.example.weatherapp.R
 
