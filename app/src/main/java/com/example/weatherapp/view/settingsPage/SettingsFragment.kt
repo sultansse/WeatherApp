@@ -15,30 +15,19 @@ class SettingsFragment : Fragment() {
     private var _binding: FragmentSettingsBinding? = null
     private val binding get() = _binding!!
 
-
-    private var _bindingActivity: ActivityMainBinding? = null
-    private val bindingActivity get() = _bindingActivity!!
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        val root = inflater.inflate(R.layout.fragment_settings, container, false)
+    ): View {
 
-//        binding.root.findViewById<ToggleButton>(R.id.temperature_format_toggle).setOnClickListener(){
-//            //todo change text string resource for whole activity , it means everywhere
-//            binding.root.findViewById<R.a>()
-//        }
+        _binding = FragmentSettingsBinding.inflate(layoutInflater)
+        return binding.root
+//        return inflater.inflate(R.layout.fragment_settings, container, false)
 
-        return root
     }
 
 }
