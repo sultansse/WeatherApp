@@ -17,8 +17,8 @@
 
 
     <!-- changeable temp type for all pages-->
-    <string name="temperature_format_c">%d°C</string>
-    <string name="temperature_format_f">%d°F</string>
+    <string name="temperature_format_c">°C</string>
+    <string name="temperature_format_f">°F</string>
     <!--Home Page strings ======================= -->
     <string name="temperature_description">Precipitations</string>
     <!--homepage first recyclerview-->
