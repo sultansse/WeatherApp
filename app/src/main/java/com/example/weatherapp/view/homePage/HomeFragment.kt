@@ -49,13 +49,17 @@ class HomeFragment : Fragment() {
 
 
         var temperatureData = 28
-        today_temperature.text = temperatureData.toString()
-//        var temperature = "$temperatureData ${R.string.temperature_format_c}"
-//        today_temperature.text = temperature
-//        today_temperature.setOnClickListener {
-//            temperatureData++
-//            today_temperature.text = temperature
-//        }
+
+        //todo if SettingsFragment.ToggleButton isClicked -> var temperatureFormat == ${R.string.temperature_format_f}" else ${R.string.temperature_format_c}"
+        val temperature: String by lazy {
+            "$temperatureData${resources.getString(R.string.temperature_format_c)}"
+        }
+        today_temperature.text = temperature
+
+        today_temperature.setOnClickListener {
+            temperatureData++
+            today_temperature.text = temperature
+        }
 
 
         // view model instance
