@@ -19,17 +19,16 @@
     <!-- changeable temp type for all pages-->
     <string name="temperature_format_c">%d°C</string>
     <string name="temperature_format_f">%d°F</string>
-
-
+    <!--Home Page strings ======================= -->
     <string name="temperature_description">Precipitations</string>
     <!--homepage first recyclerview-->
-    <string name="temperature_per_hour">24</string>
+    <string name="temperature_per_hour">24°C</string>
     <string name="each_time_today">14:00</string>
     <!--homepage second recyclerview-->
     <string name="dayOfWeek">Monday</string>
     <string name="dayTempOfDayWeek">13°C</string>
     <string name="nightTempOfDayWeek">4°C</string>
-    <!--search fragment's text -->
+    <!--Search Page strings ======================= -->
     <string name="kaskelen_kz">Kaskelen, KZ</string>
     <string name="_20_c">20 °C</string>
 </resources>
