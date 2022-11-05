@@ -1,4 +1,4 @@
-package com.example.weatherapp.view.homePage.recyclers
+package com.example.weatherapp.viewModel.homePage.recyclers
 
 data class WeekItem(
     val dayOfWeek: Int,

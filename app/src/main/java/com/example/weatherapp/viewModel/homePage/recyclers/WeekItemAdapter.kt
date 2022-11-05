@@ -1,4 +1,4 @@
-package com.example.weatherapp.view.homePage.recyclers
+package com.example.weatherapp.viewModel.homePage.recyclers
 
 
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.weatherapp.view.homePage.HomeFragment
+import com.example.weatherapp.view.HomeFragment
 import com.example.weatherapp.R
 
 

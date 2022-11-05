@@ -6,7 +6,7 @@
     android:padding="12dp"
     android:orientation="vertical"
     android:background="#80AAF6"
-    tools:context=".view.searchPage.SearchFragment">
+    tools:context=".view.SearchFragment">
 
     <SearchView
         android:id="@+id/searchView"
