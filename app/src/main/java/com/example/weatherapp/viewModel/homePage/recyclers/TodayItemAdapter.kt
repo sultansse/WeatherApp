@@ -1,4 +1,4 @@
-package com.example.weatherapp.view.homePage.recyclers
+package com.example.weatherapp.viewModel.homePage.recyclers
 
 
 import android.view.LayoutInflater
@@ -6,12 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.weatherapp.view.homePage.HomeFragment
+import com.example.weatherapp.view.HomeFragment
 import com.example.weatherapp.R
+import com.example.weatherapp.viewModel.homePage.HomePageViewModel
 
 
 class TodayItemAdapter(
-    private val context: HomeFragment,
+    private val context: HomePageViewModel, //todo homeFragmentViewModel
     private val todayDataset: MutableList<TodayItem>
 ) : RecyclerView.Adapter<TodayItemAdapter.ItemViewHolder>() {
 
@@ -35,9 +36,10 @@ class TodayItemAdapter(
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = todayDataset[position]
 
-        holder.temperaturePerHour.text = context.resources.getString(item.tempOfTime)
+        //todo troubles with homeFragment migrating to HomePageViewModel
+//        holder.temperaturePerHour.text = context.resources.getString(item.tempOfTime)
 //        holder.weatherIconPerHour.setImageResource(item.weatherIconPerHour)
-        holder.eachTimeToday.text = context.resources.getString(item.timeForToday)
+//        holder.eachTimeToday.text = context.resources.getString(item.timeForToday)
     }
 
 

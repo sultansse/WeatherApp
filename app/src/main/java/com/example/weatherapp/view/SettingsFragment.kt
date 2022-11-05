@@ -1,4 +1,4 @@
-package com.example.weatherapp.view.settingsPage
+package com.example.weatherapp.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
