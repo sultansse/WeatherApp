@@ -9,10 +9,10 @@ class Repository {
 /*
 // add some this kind of validator
     fun hasInternet(): Boolean{
-        val lateinit res
+        val late init res
         if (!user.hasInternetConnection){
             res = false
-            println("u dont have connection")
+            println("u don't have connection")
 //        take data from DB
         }else{
             res = true
@@ -24,38 +24,31 @@ class Repository {
 
     val todayRecyclerData = listOf(
         TodayItem(
-            R.string.temperature_per_hour,
-//                    R.id.weatherIconPerHour,
+            R.string.temperature_per_hour,/*R.id.weatherIconPerHour,*/
             R.string.each_time_today
         ),
         TodayItem(
-            R.string.temperature_per_hour,
-//                    R.id.weatherIconPerHour,
+            R.string.temperature_per_hour,/*R.id.weatherIconPerHour,*/
             R.string.each_time_today
         ),
         TodayItem(
-            R.string.temperature_per_hour,
-//                    R.id.weatherIconPerHour,
+            R.string.temperature_per_hour,/*R.id.weatherIconPerHour,*/
             R.string.each_time_today
         ),
         TodayItem(
-            R.string.temperature_per_hour,
-//                    R.id.weatherIconPerHour,
+            R.string.temperature_per_hour,/*R.id.weatherIconPerHour,*/
             R.string.each_time_today
         ),
         TodayItem(
-            R.string.temperature_per_hour,
-//                    R.id.weatherIconPerHour,
+            R.string.temperature_per_hour,/*R.id.weatherIconPerHour,*/
             R.string.each_time_today
         ),
         TodayItem(
-            R.string.temperature_per_hour,
-//                    R.id.weatherIconPerHour,
+            R.string.temperature_per_hour,/*R.id.weatherIconPerHour,*/
             R.string.each_time_today
         ),
         TodayItem(
-            R.string.temperature_per_hour,
-//                    R.id.weatherIconPerHour,
+            R.string.temperature_per_hour,/*R.id.weatherIconPerHour,*/
             R.string.each_time_today
         )
     )

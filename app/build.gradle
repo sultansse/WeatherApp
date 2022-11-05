@@ -41,12 +41,14 @@ dependencies {
     apply plugin: "kotlin-android"
     apply plugin: "kotlin-android-extensions"
 
-    def lifecycle_version = "2.3.0"
+    def lifecycle_version = "2.3.1"
+    def arch_version = "2.1.0"
     // ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     // LiveData
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-extensions:$arch_version"
     //retrofit
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
