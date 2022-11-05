@@ -8,11 +8,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherapp.view.HomeFragment
 import com.example.weatherapp.R
-import com.example.weatherapp.viewModel.homePage.HomePageViewModel
 
 
 class TodayItemAdapter(
-    private val context: HomePageViewModel, //todo homeFragmentViewModel
+    private val context: HomeFragment, //todo homeFragmentViewModel
     private val todayDataset: MutableList<TodayItem>
 ) : RecyclerView.Adapter<TodayItemAdapter.ItemViewHolder>() {
 
@@ -37,9 +36,9 @@ class TodayItemAdapter(
         val item = todayDataset[position]
 
         //todo troubles with homeFragment migrating to HomePageViewModel
-//        holder.temperaturePerHour.text = context.resources.getString(item.tempOfTime)
+        holder.temperaturePerHour.text = context.resources.getString(item.tempOfTime)
 //        holder.weatherIconPerHour.setImageResource(item.weatherIconPerHour)
-//        holder.eachTimeToday.text = context.resources.getString(item.timeForToday)
+        holder.eachTimeToday.text = context.resources.getString(item.timeForToday)
     }
 
 

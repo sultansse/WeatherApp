@@ -1,4 +1,4 @@
-package com.example.weatherapp.view.homePage
+package com.example.weatherapp.view
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -10,10 +10,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherapp.R
 import com.example.weatherapp.databinding.FragmentHomeBinding
-import com.example.weatherapp.view.homePage.recyclers.Datasource
-import com.example.weatherapp.view.homePage.recyclers.TodayItemAdapter
-import com.example.weatherapp.view.homePage.recyclers.WeekItemAdapter
 import com.example.weatherapp.viewModel.homePage.HomePageViewModel
+import com.example.weatherapp.viewModel.homePage.recyclers.Datasource
+import com.example.weatherapp.viewModel.homePage.recyclers.TodayItemAdapter
+import com.example.weatherapp.viewModel.homePage.recyclers.WeekItemAdapter
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_settings.*
 import kotlinx.android.synthetic.main.item_today_details.*
@@ -37,6 +37,7 @@ class HomeFragment : Fragment() {
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         val todayDataset = Datasource().loadTodayViews()
         val todayRecyclerview = view.findViewById<RecyclerView>(R.id.todayDetailsRecycler)
         todayRecyclerview?.adapter = TodayItemAdapter(this, todayDataset)
