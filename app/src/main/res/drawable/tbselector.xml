@@ -4,12 +4,10 @@
     <!--        android:drawable="@drawable/bgdefault"-->
     <!--        android:state_focused="false"-->
     <!--        android:state_selected="false"/>-->
-    <item
-        android:drawable="@drawable/bgselected"
-        android:state_pressed="true"
-        android:state_hovered="true"
-        android:state_focused="true"
-        android:state_drag_hovered="true"
-        />
+    <item android:drawable="@drawable/bgselected" android:state_pressed="true" />
+    <item android:drawable="@drawable/bgselected" android:state_focused="true" />
+    <item android:drawable="@drawable/bgselected" android:state_hovered="true" />
+    <item android:drawable="@drawable/bgselected" android:state_active="true" />
+    <item android:drawable="@drawable/bgselected" android:state_drag_hovered="true" />
 
 </selector>
