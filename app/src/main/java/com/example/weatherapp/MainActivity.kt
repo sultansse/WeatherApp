@@ -1,6 +1,8 @@
 package com.example.weatherapp
 
+import android.app.Dialog
 import android.os.Bundle
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -40,4 +42,26 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
     }
+
+    override fun onBackPressed() {
+        // creating custom dialog
+        val dialog = Dialog(this@MainActivity)
+        // setting content view to dialog
+        dialog.setContentView(R.layout.custom_exit_dialog)
+        // getting reference of TextView
+        val dialogButtonYes = dialog.findViewById(R.id.textViewYes) as TextView
+        val dialogButtonNo = dialog.findViewById(R.id.textViewNo) as TextView
+        // click listener for No
+        dialogButtonNo.setOnClickListener { // dismiss the dialog
+            dialog.dismiss()
+        }
+        // click listener for Yes
+        dialogButtonYes.setOnClickListener { // dismiss the dialog and exit the exit
+            dialog.dismiss()
+            finish()
+        }
+        // show the exit dialog
+        dialog.show()
+    }
+
 }
