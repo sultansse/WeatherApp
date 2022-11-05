@@ -44,24 +44,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        // creating custom dialog
         val dialog = Dialog(this@MainActivity)
-        // setting content view to dialog
         dialog.setContentView(R.layout.custom_exit_dialog)
-        // getting reference of TextView
-        val dialogButtonYes = dialog.findViewById(R.id.textViewYes) as TextView
-        val dialogButtonNo = dialog.findViewById(R.id.textViewNo) as TextView
-        // click listener for No
-        dialogButtonNo.setOnClickListener { // dismiss the dialog
+
+        val dialogButtonExit = dialog.findViewById(R.id.textViewYes) as TextView
+        val dialogButtonCancel = dialog.findViewById(R.id.textViewNo) as TextView
+
+        dialogButtonCancel.setOnClickListener { // dismiss the dialog
             dialog.dismiss()
         }
-        // click listener for Yes
-        dialogButtonYes.setOnClickListener { // dismiss the dialog and exit the exit
+        dialogButtonExit.setOnClickListener { // dismiss the dialog and exit the exit
             dialog.dismiss()
             finish()
         }
-        // show the exit dialog
         dialog.show()
     }
+
 
 }

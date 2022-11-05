@@ -96,6 +96,8 @@
         android:paddingEnd="10dp"
         android:paddingStart="0dp"
         android:text="Send us your FeedBack!"
+        android:clickable="true"
+        android:focusable="true"
         android:textColor="@color/white"
         android:textSize="24sp"
         app:drawableStartCompat="@drawable/ic_baseline_dark_mode_24"
