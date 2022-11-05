@@ -6,6 +6,22 @@ import com.example.weatherapp.viewModel.homePage.recyclers.WeekItem
 
 class Repository {
 
+/*
+// add some this kind of validator
+    fun hasInternet(): Boolean{
+        val lateinit res
+        if (!user.hasInternetConnection){
+            res = false
+            println("u dont have connection")
+//        take data from DB
+        }else{
+            res = true
+//        take data from WebServices
+        }
+        return res
+    }
+*/
+
     val todayRecyclerData = listOf(
         TodayItem(
             R.string.temperature_per_hour,
