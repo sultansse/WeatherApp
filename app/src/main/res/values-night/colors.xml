@@ -7,7 +7,10 @@
     <color name="teal_700">#446161</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="bLueBackground">#000000</color>
+    <color name="bLueBackground">#124BB4</color>
     <color name="backgroundTransparent">#32001026</color>
     <color name="blueBackgroundTransparent">#32124BB4</color>
+    <color name="StartGradient">#08244F</color>
+    <color name="CenterGradient">#134CB5</color>
+    <color name="EndGradient">#0B42AB</color>
 </resources>

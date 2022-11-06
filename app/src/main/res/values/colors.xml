@@ -10,4 +10,7 @@
     <color name="bLueBackground">#124BB4</color>
     <color name="backgroundTransparent">#32001026</color>
     <color name="blueBackgroundTransparent">#32124BB4</color>
+    <color name="StartGradient">#29B2DD</color>
+    <color name="CenterGradient">#33AADD</color>
+    <color name="EndGradient">#2DC8EA</color>
 </resources>
