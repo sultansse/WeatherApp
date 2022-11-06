@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.example.weatherapp.R
 import com.example.weatherapp.databinding.FragmentSettingsBinding
 import com.example.weatherapp.viewModel.settingsPage.SettingsPageViewModel
 
@@ -15,6 +16,7 @@ class SettingsFragment : Fragment() {
     private var _binding: FragmentSettingsBinding? = null
     private val binding get() = _binding!!
     private val viewModel: SettingsPageViewModel by viewModels()
+//    val viewModel = ViewModelProvider(this)[SettingsPageViewModel::class.java]
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,8 +27,14 @@ class SettingsFragment : Fragment() {
         binding.sendFeedback.setOnClickListener() {
             viewModel.sendFeedback(requireContext())
         }
-        return binding.root
 
+        binding.temperatureFormatToggle.setOnClickListener() {
+            viewModel.formatChanged(getString(R.string.temperature_format))
+        }
+
+
+        return binding.root
     }
+
 
 }

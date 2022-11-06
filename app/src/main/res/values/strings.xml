@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Weather App</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -17,6 +18,8 @@
 
 
     <!-- changeable temp type for all pages-->
+    <string name="temperature_format">°C</string>
+
     <string name="temperature_format_c">°C</string>
     <string name="temperature_format_f">°F</string>
     <!--Home Page strings ======================= -->

@@ -1,19 +1,22 @@
 package com.example.weatherapp.viewModel.homePage
 
 import androidx.lifecycle.ViewModel
+import com.example.weatherapp.repository.Repository
 
 class HomePageViewModel : ViewModel() {
 
-//    var today_temperature = 28
-//    var humidity
-//    var today_descriptionOfTemp
-//    var windiness
-//    var pressure
-//    var tempOfTime
-//    var timeForToday
-//    var dayOfWeek
-//    var dayTempOfDayWeek
-//    var nightTempOfDayWeek
+    fun todayTemperature() : String{
+
+        val temperature: Int = Repository().temperatureToday
+        val format:String = Repository().formatOfTemperature
+
+        val res: String by lazy {
+            "$temperature$format"
+        }
+        return res
+    }
+
+
 
 
 //    fun createTodayRecycler(view: View){

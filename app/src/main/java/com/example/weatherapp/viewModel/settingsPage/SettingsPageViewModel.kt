@@ -5,6 +5,9 @@ import android.content.Intent
 import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModel
+import com.example.weatherapp.R
+import com.example.weatherapp.repository.Repository
+import com.example.weatherapp.view.SettingsFragment
 
 class SettingsPageViewModel : ViewModel() {
 
@@ -19,7 +22,15 @@ class SettingsPageViewModel : ViewModel() {
             context, Intent.createChooser(email, "Send Feedback:"),
             bundleOf().getBundle(email.dataString)
         )
+    }
 
+
+    fun formatChanged(temperatureFormat: String){
+        if (temperatureFormat == "°F"){
+            Repository().formatOfTemperature = "°C"
+        }else{
+            Repository().formatOfTemperature = "°F"
+        }
     }
 
 }

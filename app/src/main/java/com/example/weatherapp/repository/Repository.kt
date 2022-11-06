@@ -22,6 +22,23 @@ class Repository {
     }
 */
 
+    //   ==settings== Page all variables ==============================
+    var formatOfTemperature: String = ""
+//  var darkMode
+
+    //    ==homePage== all variables ==============================
+    var temperatureToday = 28
+/*  var humidity
+  var today_descriptionOfTemp
+  var windiness
+  var pressure
+  var tempOfTime
+  var timeForToday
+  var dayOfWeek
+  var dayTempOfDayWeek
+  var nightTempOfDayWeek*/
+
+    //  data from API network ==============================
     val todayRecyclerData = listOf(
         TodayItem(
             R.string.temperature_per_hour,/*R.id.weatherIconPerHour,*/

@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherapp.R
 import com.example.weatherapp.databinding.FragmentHomeBinding
@@ -21,6 +21,7 @@ import kotlinx.android.synthetic.main.item_week_details.*
 
 class HomeFragment : Fragment() {
 
+    val viewModel: HomePageViewModel by viewModels()
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
@@ -48,38 +49,9 @@ class HomeFragment : Fragment() {
         weekRecyclerview?.adapter = WeekItemAdapter(this, weekDataset)
         weekRecyclerview?.setHasFixedSize(true)
 
-
-        var temperatureData = 28
-
-        //todo if SettingsFragment.ToggleButton isClicked -> var temperatureFormat == ${R.string.temperature_format_f}" else ${R.string.temperature_format_c}"
-        val temperature: String by lazy {
-            "$temperatureData${resources.getString(R.string.temperature_format_c)}"
+        binding.todayTemperature.apply {
+        binding.todayTemperature.text = viewModel.todayTemperature()
         }
-        today_temperature.text = temperature
-
-        today_temperature.setOnClickListener {
-            temperatureData++
-            today_temperature.text = temperature
-        }
-
-
-        // view model instance
-        var viewModel: HomePageViewModel = ViewModelProvider(this)[HomePageViewModel::class.java]
-
-        // homePage's variables \ texts
-        /*       today_temperature.text = viewModel.toString()
-               humidity.text = viewModel.toString()
-               today_descriptionOfTemp.text = viewModel.toString()
-               windiness.text = viewModel.toString()
-               pressure.text = viewModel.toString()
-               // first recyclerview / Today temperature per hour
-               tempOfTime.text = viewModel.toString()
-               timeForToday.text = viewModel.toString()
-               //  second recyclerview / week temperature per day
-               dayOfWeek.text = viewModel.toString()
-               dayTempOfDayWeek.text = viewModel.toString()
-               nightTempOfDayWeek.text = viewModel.toString()*/
-
     }
 
 }
