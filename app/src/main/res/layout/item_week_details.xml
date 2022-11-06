@@ -5,6 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:background="#FF018685"
+    android:background="@drawable/tbselector"
+    android:clickable="true"
+    android:focusable="true"
+    android:longClickable="true"
     android:orientation="vertical">
 
     <TextView

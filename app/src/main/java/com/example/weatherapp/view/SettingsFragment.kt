@@ -1,11 +1,9 @@
 package com.example.weatherapp.view
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.weatherapp.databinding.FragmentSettingsBinding
@@ -24,8 +22,8 @@ class SettingsFragment : Fragment() {
     ): View {
         _binding = FragmentSettingsBinding.inflate(layoutInflater)
 
-        binding.sendFeedback.setOnClickListener(){
-            viewModel.sendFeedback(requireContext(),)
+        binding.sendFeedback.setOnClickListener() {
+            viewModel.sendFeedback(requireContext())
         }
         return binding.root
 
