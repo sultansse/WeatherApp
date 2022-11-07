@@ -19,7 +19,7 @@
             android:backgroundTint="#1969A8"
             android:text="All"
             android:textSize="10sp"
-            app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerView_topnews"
             app:layout_constraintEnd_toStartOf="@+id/weather_news"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -31,7 +31,7 @@
             android:backgroundTint="#1969A8"
             android:text="Weather"
             android:textSize="10sp"
-            app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerView_topnews"
             app:layout_constraintEnd_toStartOf="@+id/technologies_news"
             app:layout_constraintStart_toEndOf="@+id/all_news"
             app:layout_constraintTop_toTopOf="parent" />
@@ -43,7 +43,7 @@
             android:backgroundTint="#1969A8"
             android:text="Technologies"
             android:textSize="10sp"
-            app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerView_topnews"
             app:layout_constraintEnd_toStartOf="@+id/button5"
             app:layout_constraintStart_toEndOf="@+id/weather_news"
             app:layout_constraintTop_toTopOf="parent" />
@@ -55,19 +55,47 @@
             android:backgroundTint="#1969A8"
             android:text="Button"
             android:textSize="10sp"
-            app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerView_topnews"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/technologies_news"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
+            android:id="@+id/recyclerView_topnews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:scrollbars="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/all_news"
+            tools:itemCount="10"
+            tools:listitem="@layout/top_news" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/all_news" />
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView_topnews"
+            tools:itemCount="3"
+            tools:listitem="@layout/top_news"/>
 
+
+        <TextView
+            android:id="@+id/footer_text_news"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="80dp"
+            android:text="All rights reserved by the EBSA News"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

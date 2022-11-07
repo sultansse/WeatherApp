@@ -3,7 +3,7 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardViewBlock"
-    android:layout_width="80dp"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
     android:outlineProvider="none"
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:src="@drawable/sunny"
-        tools:ignore="ContentDescription"></ImageView>
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/timeForToday"
