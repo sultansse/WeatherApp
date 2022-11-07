@@ -39,6 +39,10 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel.temperature.observe(viewLifecycleOwner) {
+            binding.todayTemperature.text = it
+        }
+
         val todayDataset = Datasource().loadTodayViews()
         val todayRecyclerview = view.findViewById<RecyclerView>(R.id.todayDetailsRecycler)
         todayRecyclerview?.adapter = TodayItemAdapter(this, todayDataset)
@@ -48,23 +52,6 @@ class HomeFragment : Fragment() {
         val weekRecyclerview = view.findViewById<RecyclerView>(R.id.weekDaysDetailsRecycler)
         weekRecyclerview?.adapter = WeekItemAdapter(this, weekDataset)
         weekRecyclerview?.setHasFixedSize(true)
-
-//        binding.todayTemperature.apply {
-//            binding.todayTemperature.text = viewModel.todayTemperature()
-//        }
-
-        var temperatureData = 28
-
-        //todo if SettingsFragment.ToggleButton isClicked -> var temperatureFormat == ${R.string.temperature_format_f}" else ${R.string.temperature_format_c}"
-        val temperature: String by lazy {
-            "$temperatureData${resources.getString(R.string.temperature_format_c)}"
-        }
-        today_temperature.text = temperature
-
-        today_temperature.setOnClickListener {
-            temperatureData++
-            today_temperature.text = temperature
-        }
     }
 
 }

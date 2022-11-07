@@ -6,9 +6,14 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import com.example.weatherapp.repository.Repository
 
 class SettingsPageViewModel : ViewModel() {
+
+    private val repository = Repository.getInstance()
+
+    val currentTemperatureType = repository.currentTemperatureType.asLiveData()
 
     fun sendFeedback(context: Context) {
 
@@ -23,12 +28,8 @@ class SettingsPageViewModel : ViewModel() {
         )
     }
 
-    fun formatChanged(temperatureFormat: String) {
-        if (temperatureFormat == "°F") {
-            Repository().formatOfTemperature = "°C"
-        } else {
-            Repository().formatOfTemperature = "°F"
-        }
+    fun onToggleTemperatureFormat() {
+        repository.toggleTemperatureType()
     }
 
     fun darkMode(isChecked: Boolean) {

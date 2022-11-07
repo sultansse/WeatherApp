@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.weatherapp.R
 import com.example.weatherapp.databinding.FragmentSettingsBinding
+import com.example.weatherapp.repository.model.TemperatureType
 import com.example.weatherapp.viewModel.settingsPage.SettingsPageViewModel
 
 
@@ -22,20 +23,30 @@ class SettingsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentSettingsBinding.inflate(layoutInflater)
+        return binding.root
+    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         binding.sendFeedback.setOnClickListener() {
             viewModel.sendFeedback(requireContext())
         }
 
-        binding.temperatureFormatToggle.setOnClickListener() {
-            viewModel.formatChanged(getString(R.string.temperature_format))
+        binding.temperatureFormatButton.setOnClickListener(){
+            viewModel.onToggleTemperatureFormat()
         }
 
         binding.darkModeText.setOnCheckedChangeListener { buttonView, isChecked ->
             viewModel.darkMode(isChecked)
         }
 
-        return binding.root
+        viewModel.currentTemperatureType.observe(viewLifecycleOwner) { type ->
+            binding.temperatureFormatButton.text = type.toFormattedString()
+        }
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

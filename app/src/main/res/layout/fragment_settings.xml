@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText,TextContrastCheck" />
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/darkMode_text"
@@ -49,7 +49,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/notification_text"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText,TextContrastCheck" />
 
 
     <!-- temperature format    -->
@@ -61,36 +61,40 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/tbselector"
         android:clickable="true"
-        android:focusable="true"
-        android:longClickable="true"
         android:drawablePadding="20dp"
+        android:focusable="true"
         android:fontFamily="@font/maven_pro_medium"
+        android:gravity="center"
+        android:longClickable="true"
+        android:minHeight="48dp"
         android:text="Temperature format"
         android:textColor="@color/white"
         android:textSize="24sp"
         app:drawableStartCompat="@drawable/ic_baseline_notifications_24"
-        app:layout_constraintEnd_toStartOf="@+id/temperature_format_toggle"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/darkMode_text"
-        tools:ignore="HardcodedText">
+        tools:ignore="HardcodedText,TextContrastCheck">
 
     </TextView>
+    <!--todo change toggle to button change text etc-->
 
-    <ToggleButton
-        android:id="@+id/temperature_format_toggle"
-        android:layout_width="wrap_content"
+    <!--    android:textOn="°F"-->
+
+    <Button
+        android:id="@+id/temperature_format_button"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
         android:background="@color/white"
-        android:text="ToggleButton"
-        android:textColor="#455A64"
-        android:textOff="°C"
-        android:textOn="°F"
-        android:textSize="24sp"
+        android:text="°C"
+        android:textColor="@color/black"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/darkMode_text"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/temperature_format"
+        app:layout_constraintTop_toBottomOf="@+id/darkMode_text"
         tools:ignore="HardcodedText,TextContrastCheck" />
 
     <TextView
@@ -116,7 +120,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/temperature_format"
-        tools:ignore="HardcodedText">
+        tools:ignore="HardcodedText,TextContrastCheck">
 
     </TextView>
 

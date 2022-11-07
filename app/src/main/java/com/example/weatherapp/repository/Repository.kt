@@ -1,12 +1,42 @@
 package com.example.weatherapp.repository
 
 import com.example.weatherapp.R
+import com.example.weatherapp.repository.model.TemperatureType
 import com.example.weatherapp.viewModel.homePage.recyclers.TodayItem
 import com.example.weatherapp.viewModel.homePage.recyclers.WeekItem
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
 
-class Repository {
+class Repository private constructor(){
 
-/*
+    private val _currentTemperatureType = MutableStateFlow<TemperatureType>(TemperatureType.Celcius)
+    val currentTemperatureType: Flow<TemperatureType> = _currentTemperatureType
+
+    private val _temperatureToday = MutableStateFlow<Int>(28)
+    val temperatureToday: Flow<Int> = _temperatureToday
+
+    fun toggleTemperatureType() {
+        val newType = when (_currentTemperatureType.value) {
+            TemperatureType.Celcius -> TemperatureType.Faranheit
+            TemperatureType.Faranheit -> TemperatureType.Celcius
+        }
+        _currentTemperatureType.value = newType
+    }
+
+    companion object {
+        private var INSTANCE: Repository? = null
+
+        fun getInstance(): Repository {
+            var instance = INSTANCE
+            if (instance == null) {
+                instance = Repository()
+                INSTANCE = instance
+            }
+            return instance
+        }
+    }
+
+    /*
 // add some this kind of validator
     fun hasInternet(): Boolean{
         val late init res
@@ -22,12 +52,6 @@ class Repository {
     }
 */
 
-    //   ==settings== Page all variables ==============================
-    var formatOfTemperature: String = ""
-//  var darkMode
-
-    //    ==homePage== all variables ==============================
-    var temperatureToday = 28
 /*  var humidity
   var today_descriptionOfTemp
   var windiness

@@ -7,7 +7,7 @@ class Datasource {
     fun loadTodayViews(): MutableList<TodayItem> {
         val res = mutableListOf<TodayItem>()
         res.addAll(
-           Repository().todayRecyclerData
+            Repository.getInstance().todayRecyclerData
         )
         return res
     }
@@ -15,7 +15,7 @@ class Datasource {
     fun loadWeekViews(): MutableList<WeekItem> {
         val res = mutableListOf<WeekItem>()
         res.addAll(
-           Repository().weekRecyclerData
+            Repository.getInstance().weekRecyclerData
         )
         return res
     }
