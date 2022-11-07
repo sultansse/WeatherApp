@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
     android:outlineProvider="none"
-    card_view:cardBackgroundColor="@color/blueBackgroundTransparent"
+    card_view:cardBackgroundColor="@color/backgroundTransparent"
     card_view:cardCornerRadius="12dp">
 
     <TextView
@@ -26,8 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:src="@drawable/sunny"
-        tools:ignore="ContentDescription">
-    </ImageView>
+        tools:ignore="ContentDescription"></ImageView>
 
     <TextView
         android:id="@+id/timeForToday"
@@ -35,9 +34,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_margin="4dp"
+        android:layout_marginStart="15dp"
         android:text="@string/each_time_today"
         android:textColor="@color/white"
-        android:layout_marginStart="15dp"
         android:textSize="22sp" />
 
 

@@ -112,7 +112,7 @@
         android:text="Send us your FeedBack!"
         android:textColor="@color/white"
         android:textSize="24sp"
-        app:drawableStartCompat="@drawable/ic_baseline_dark_mode_24"
+        app:drawableStartCompat="@drawable/ic_baseline_mail_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/temperature_format"

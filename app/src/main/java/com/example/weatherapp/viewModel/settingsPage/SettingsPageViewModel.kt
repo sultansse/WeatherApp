@@ -23,15 +23,18 @@ class SettingsPageViewModel : ViewModel() {
         )
     }
 
-    fun formatChanged(temperatureFormat: String){
-        if (temperatureFormat == "°F"){
+    fun formatChanged(temperatureFormat: String) {
+        if (temperatureFormat == "°F") {
             Repository().formatOfTemperature = "°C"
-        }else{
+        } else {
             Repository().formatOfTemperature = "°F"
         }
     }
 
     fun darkMode(isChecked: Boolean) {
+
+//        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+
         if (isChecked) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         } else {
