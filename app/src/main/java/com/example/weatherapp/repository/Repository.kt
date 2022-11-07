@@ -2,6 +2,7 @@ package com.example.weatherapp.repository
 
 import com.example.weatherapp.R
 import com.example.weatherapp.repository.model.TemperatureType
+import com.example.weatherapp.viewModel.NewsPage.recycler.RecyclerItem
 import com.example.weatherapp.viewModel.homePage.recyclers.TodayItem
 import com.example.weatherapp.viewModel.homePage.recyclers.WeekItem
 import kotlinx.coroutines.flow.Flow
@@ -61,6 +62,47 @@ class Repository private constructor(){
   var dayOfWeek
   var dayTempOfDayWeek
   var nightTempOfDayWeek*/
+
+val newsRecyclerData = listOf(
+    RecyclerItem(
+        /*image also*/
+        R.string.news_title,
+        R.string.news_text,
+
+    ),
+    RecyclerItem(
+        /*image also*/
+        R.string.news_title,
+        R.string.news_text,
+
+    ),
+    RecyclerItem(
+        /*image also*/
+        R.string.news_title,
+        R.string.news_text,
+
+    ),
+    RecyclerItem(
+        /*image also*/
+        R.string.news_title,
+        R.string.news_text,
+
+    ),
+    RecyclerItem(
+        /*image also*/
+        R.string.news_title,
+        R.string.news_text,
+
+    ),
+    RecyclerItem(
+        /*image also*/
+        R.string.news_title,
+        R.string.news_text,
+
+    )
+
+)
+
 
     //  data from API network ==============================
     val todayRecyclerData = listOf(

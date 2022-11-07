@@ -18,7 +18,7 @@ class TodayItemAdapter(
 
 
     class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
-        val temperaturePerHour: TextView = view.findViewById(R.id.tempOfTime)
+        val temperaturePerHour: TextView = view.findViewById(R.id.footer_text_news)
 //        val weatherIconPerHour: ImageView = view.findViewById(R.id.weatherIconPerHour)
         val eachTimeToday: TextView = view.findViewById(R.id.timeForToday)
     }
