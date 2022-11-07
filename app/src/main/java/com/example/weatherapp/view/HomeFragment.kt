@@ -49,8 +49,21 @@ class HomeFragment : Fragment() {
         weekRecyclerview?.adapter = WeekItemAdapter(this, weekDataset)
         weekRecyclerview?.setHasFixedSize(true)
 
-        binding.todayTemperature.apply {
-        binding.todayTemperature.text = viewModel.todayTemperature()
+//        binding.todayTemperature.apply {
+//            binding.todayTemperature.text = viewModel.todayTemperature()
+//        }
+
+        var temperatureData = 28
+
+        //todo if SettingsFragment.ToggleButton isClicked -> var temperatureFormat == ${R.string.temperature_format_f}" else ${R.string.temperature_format_c}"
+        val temperature: String by lazy {
+            "$temperatureData${resources.getString(R.string.temperature_format_c)}"
+        }
+        today_temperature.text = temperature
+
+        today_temperature.setOnClickListener {
+            temperatureData++
+            today_temperature.text = temperature
         }
     }
 

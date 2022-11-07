@@ -2,12 +2,11 @@ package com.example.weatherapp.viewModel.settingsPage
 
 import android.content.Context
 import android.content.Intent
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModel
-import com.example.weatherapp.R
 import com.example.weatherapp.repository.Repository
-import com.example.weatherapp.view.SettingsFragment
 
 class SettingsPageViewModel : ViewModel() {
 
@@ -24,12 +23,19 @@ class SettingsPageViewModel : ViewModel() {
         )
     }
 
-
     fun formatChanged(temperatureFormat: String){
         if (temperatureFormat == "°F"){
             Repository().formatOfTemperature = "°C"
         }else{
             Repository().formatOfTemperature = "°F"
+        }
+    }
+
+    fun darkMode(isChecked: Boolean) {
+        if (isChecked) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         }
     }
 
