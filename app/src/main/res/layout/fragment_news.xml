@@ -12,9 +12,61 @@
         android:orientation="vertical"
         tools:context=".view.HomeFragment">
 
+        <Button
+            android:id="@+id/all_news"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#1969A8"
+            android:text="All"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toStartOf="@+id/weather_news"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <Button
+            android:id="@+id/weather_news"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#1969A8"
+            android:text="Weather"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toStartOf="@+id/technologies_news"
+            app:layout_constraintStart_toEndOf="@+id/all_news"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <Button
+            android:id="@+id/technologies_news"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#1969A8"
+            android:text="Technologies"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toStartOf="@+id/button5"
+            app:layout_constraintStart_toEndOf="@+id/weather_news"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#1969A8"
+            android:text="Button"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/technologies_news"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:layout_width="409dp"
+            android:layout_height="681dp"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="49dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
