@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Weather App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="news_fragment">News Fragment</string>
+    <string name="search">Search</string>
+    <string name="city_name">City Name</string>
+
+    <string-array name="DailyWeather">
+        <item>Алматы</item>
+        <item>Астана</item>
+        <item>Талдыкорган</item>
+        <item>Шымкент</item>
+        <item>Конаев</item>
+        <item>Туркистан</item>
+    </string-array>
+
+
+    <!-- changeable temp type for all pages-->
+    <string name="temperature_format_c">°C</string>
+    <string name="temperature_format_f">°F</string>
+    <!--Home Page strings ======================= -->
+    <string name="temperature_description">Precipitations</string>
+    <!--homepage first recyclerview-->
+    <string name="temperature_per_hour">24°C</string>
+    <string name="each_time_today">14:00</string>
+    <!--homepage second recyclerview-->
+    <string name="dayOfWeek">Monday</string>
+    <string name="dayTempOfDayWeek">13°C</string>
+    <string name="nightTempOfDayWeek">4°C</string>
+    <!--Search Page strings ======================= -->
+    <string name="kaskelen_kz">Kaskelen, KZ</string>
+    <string name="_20_c">20 °C</string>
+</resources>

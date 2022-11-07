@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:padding="12dp"
     android:orientation="vertical"
-    android:background="#80AAF6"
+    android:background="@drawable/gradient"
     tools:context=".view.SearchFragment">
 
     <SearchView
@@ -33,7 +33,7 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/weathericon"/>
+            android:src="@mipmap/ic_launcher_foreground"/>
 
         <LinearLayout
             android:layout_width="match_parent"
