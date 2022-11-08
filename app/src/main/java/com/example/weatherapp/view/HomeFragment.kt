@@ -1,23 +1,13 @@
 package com.example.weatherapp.view
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.RecyclerView
-import com.example.weatherapp.R
 import com.example.weatherapp.databinding.FragmentHomeBinding
 import com.example.weatherapp.viewModel.homePage.HomePageViewModel
-import com.example.weatherapp.viewModel.homePage.recyclers.Datasource
-import com.example.weatherapp.viewModel.homePage.recyclers.TodayItemAdapter
-import com.example.weatherapp.viewModel.homePage.recyclers.WeekItemAdapter
-import kotlinx.android.synthetic.main.fragment_home.*
-import kotlinx.android.synthetic.main.fragment_settings.*
-import kotlinx.android.synthetic.main.item_today_details.*
-import kotlinx.android.synthetic.main.item_week_details.*
 
 class HomeFragment : Fragment() {
 
@@ -31,29 +21,26 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHomeBinding.inflate(layoutInflater)
-
         return binding.root
     }
 
-    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.temperature.observe(viewLifecycleOwner) {
-            binding.todayTemperature.text = it
+            binding.currentTempTextview.text = it
         }
 
-        val todayDataset = Datasource().loadTodayViews()
-        val todayRecyclerview = view.findViewById<RecyclerView>(R.id.todayDetailsRecycler)
-        todayRecyclerview?.adapter = TodayItemAdapter(this, todayDataset)
-        todayRecyclerview?.setHasFixedSize(true)
+        viewModel.todayHourlyRecyclerview(this, view)
 
-        val weekDataset = Datasource().loadWeekViews()
-        val weekRecyclerview = view.findViewById<RecyclerView>(R.id.weekDaysDetailsRecycler)
-        weekRecyclerview?.adapter = WeekItemAdapter(this, weekDataset)
-        weekRecyclerview?.setHasFixedSize(true)
+        viewModel.dailyWeekRecyclerview(this, view)
+
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }
 
 

@@ -71,52 +71,52 @@ class Repository private constructor(){
 
     val weekRecyclerData = listOf(
         WeekItem(
-            R.string.dayOfWeek,/*R.id.weatherIconPerHour,*/
+            R.string.dayOfWeek,
             R.string.dayTempOfDayWeek,
             R.string.nightTempOfDayWeek
         ),
         WeekItem(
-            R.string.dayOfWeek,/*R.id.weatherIconPerHour,*/
+            R.string.dayOfWeek,
             R.string.dayTempOfDayWeek,
             R.string.nightTempOfDayWeek
         ),
         WeekItem(
-            R.string.dayOfWeek,/*R.id.weatherIconPerHour,*/
+            R.string.dayOfWeek,
             R.string.dayTempOfDayWeek,
             R.string.nightTempOfDayWeek
         ),
         WeekItem(
-            R.string.dayOfWeek,/*R.id.weatherIconPerHour,*/
+            R.string.dayOfWeek,
             R.string.dayTempOfDayWeek,
             R.string.nightTempOfDayWeek
         ),
         WeekItem(
-            R.string.dayOfWeek,/*R.id.weatherIconPerHour,*/
+            R.string.dayOfWeek,
             R.string.dayTempOfDayWeek,
             R.string.nightTempOfDayWeek
         ),
         WeekItem(
-            R.string.dayOfWeek,/*R.id.weatherIconPerHour,*/
+            R.string.dayOfWeek,
             R.string.dayTempOfDayWeek,
             R.string.nightTempOfDayWeek
         ),
         WeekItem(
-            R.string.dayOfWeek,/*R.id.weatherIconPerHour,*/
+            R.string.dayOfWeek,
             R.string.dayTempOfDayWeek,
             R.string.nightTempOfDayWeek
         ),
         WeekItem(
-            R.string.dayOfWeek,/*R.id.weatherIconPerHour,*/
+            R.string.dayOfWeek,
             R.string.dayTempOfDayWeek,
             R.string.nightTempOfDayWeek
         ),
         WeekItem(
-            R.string.dayOfWeek,/*R.id.weatherIconPerHour,*/
+            R.string.dayOfWeek,
             R.string.dayTempOfDayWeek,
             R.string.nightTempOfDayWeek
         ),
         WeekItem(
-            R.string.dayOfWeek,/*R.id.weatherIconPerHour,*/
+            R.string.dayOfWeek,
             R.string.dayTempOfDayWeek,
             R.string.nightTempOfDayWeek
         )

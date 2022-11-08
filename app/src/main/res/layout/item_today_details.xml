@@ -10,8 +10,8 @@
     card_view:cardBackgroundColor="@color/backgroundTransparent"
     card_view:cardCornerRadius="12dp">
 
-    <TextView
-        android:id="@+id/tempOfTime"
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/temp_at_hour_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="top|center_horizontal"
@@ -20,16 +20,18 @@
         android:textColor="@color/white"
         android:textSize="22sp" />
 
-    <ImageView
-        android:id="@+id/weatherIconPerHour"
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/weather_icon_per_hour_imageview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:src="@drawable/sunny"
-        tools:ignore="ContentDescription"></ImageView>
+        tools:ignore="ContentDescription">
 
-    <TextView
-        android:id="@+id/timeForToday"
+    </com.google.android.material.imageview.ShapeableImageView>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/time_of_today_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"

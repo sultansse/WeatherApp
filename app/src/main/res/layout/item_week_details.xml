@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:background="#FF018685"
     android:background="@drawable/tbselector"
     android:clickable="true"
     android:focusable="true"
     android:longClickable="true"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:background="#FF018685">
 
-    <TextView
-        android:id="@+id/dayOfWeek"
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/day_of_week_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -25,8 +25,8 @@
         card_view:layout_constraintStart_toStartOf="parent"
         card_view:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/weatherIconPerHour"
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/weather_icon_per_hour_imageview"
         android:layout_width="92dp"
         android:layout_height="78dp"
         android:paddingTop="7dp"
@@ -34,17 +34,16 @@
         android:scaleY="1.5"
         android:src="@drawable/cloudy"
         card_view:layout_constraintBottom_toBottomOf="parent"
-        card_view:layout_constraintEnd_toStartOf="@+id/dayTempOfDayWeek"
-        card_view:layout_constraintStart_toEndOf="@+id/dayOfWeek"
+        card_view:layout_constraintEnd_toStartOf="@+id/daytime_temperature_week_textview"
+        card_view:layout_constraintStart_toEndOf="@+id/day_of_week_textview"
         card_view:layout_constraintTop_toTopOf="parent"
         card_view:layout_constraintVertical_bias="0.0"
-
         tools:ignore="ContentDescription">
 
-    </ImageView>
+    </com.google.android.material.imageview.ShapeableImageView>
 
-    <TextView
-        android:id="@+id/dayTempOfDayWeek"
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/daytime_temperature_week_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="18dp"
@@ -52,11 +51,11 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         card_view:layout_constraintBottom_toBottomOf="parent"
-        card_view:layout_constraintEnd_toStartOf="@+id/nightTempOfDayWeek"
+        card_view:layout_constraintEnd_toStartOf="@+id/nighttime_temperature_week_textview"
         card_view:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/nightTempOfDayWeek"
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/nighttime_temperature_week_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
