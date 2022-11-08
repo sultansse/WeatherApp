@@ -10,7 +10,7 @@
 
 
     <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/notification_text"
+        android:id="@+id/notification_switch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
@@ -31,7 +31,7 @@
         tools:ignore="HardcodedText,TextContrastCheck" />
 
     <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/darkMode_text"
+        android:id="@+id/dark_mode_switch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
@@ -48,7 +48,7 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/notification_text"
+        app:layout_constraintTop_toBottomOf="@id/notification_switch"
         tools:ignore="HardcodedText,TextContrastCheck" />
 
 
@@ -72,13 +72,10 @@
         android:textSize="24sp"
         app:drawableStartCompat="@drawable/ic_baseline_notifications_24"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/darkMode_text"
+        app:layout_constraintTop_toBottomOf="@+id/dark_mode_switch"
         tools:ignore="HardcodedText,TextContrastCheck">
 
     </com.google.android.material.textview.MaterialTextView>
-    <!--todo change toggle to button change text etc-->
-
-    <!--    android:textOn="°F"-->
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/temperature_format_button"
@@ -95,11 +92,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/temperature_format"
-        app:layout_constraintTop_toBottomOf="@+id/darkMode_text"
+        app:layout_constraintTop_toBottomOf="@+id/dark_mode_switch"
         tools:ignore="HardcodedText,TextContrastCheck" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/sendFeedback"
+        android:id="@+id/send_feedback_textview"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"

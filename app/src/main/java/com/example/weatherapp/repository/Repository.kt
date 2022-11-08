@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 
 class Repository private constructor(){
-
+    // by default
     private val _currentTemperatureType = MutableStateFlow<TemperatureType>(TemperatureType.Celcius)
     val currentTemperatureType: Flow<TemperatureType> = _currentTemperatureType
 
@@ -36,31 +36,6 @@ class Repository private constructor(){
         }
     }
 
-    /*
-// add some this kind of validator
-    fun hasInternet(): Boolean{
-        val late init res
-        if (!user.hasInternetConnection){
-            res = false
-            println("u don't have connection")
-//        take data from DB
-        }else{
-            res = true
-//        take data from WebServices
-        }
-        return res
-    }
-*/
-
-/*  var humidity
-  var today_descriptionOfTemp
-  var windiness
-  var pressure
-  var tempOfTime
-  var timeForToday
-  var dayOfWeek
-  var dayTempOfDayWeek
-  var nightTempOfDayWeek*/
 
     //  data from API network ==============================
     val todayRecyclerData = listOf(

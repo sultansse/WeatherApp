@@ -16,12 +16,11 @@ class SettingsPageViewModel : ViewModel() {
     val currentTemperatureType = repository.currentTemperatureType.asLiveData()
 
     fun sendFeedback(context: Context) {
-
         val email = Intent(Intent.ACTION_SEND)
         email.type = "text/email"
         email.putExtra(Intent.EXTRA_EMAIL, arrayOf("ss.softwareit@gmail.com"))
         email.putExtra(Intent.EXTRA_SUBJECT, "Feedback")
-        email.putExtra(Intent.EXTRA_TEXT, "Dear software engineers,")
+        email.putExtra(Intent.EXTRA_TEXT, "Dear software engineers")
         ContextCompat.startActivity(
             context, Intent.createChooser(email, "Send Feedback:"),
             bundleOf().getBundle(email.dataString)
@@ -32,10 +31,7 @@ class SettingsPageViewModel : ViewModel() {
         repository.toggleTemperatureType()
     }
 
-    fun darkMode(isChecked: Boolean) {
-
-//        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
-
+    fun toDarkMode(isChecked: Boolean) {
         if (isChecked) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         } else {
