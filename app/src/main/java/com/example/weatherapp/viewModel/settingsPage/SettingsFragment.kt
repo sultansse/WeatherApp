@@ -1,4 +1,4 @@
-package com.example.weatherapp.view
+package com.example.weatherapp.viewModel.settingsPage
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.weatherapp.databinding.FragmentSettingsBinding
-import com.example.weatherapp.viewModel.settingsPage.SettingsPageViewModel
 
 
 class SettingsFragment : Fragment() {

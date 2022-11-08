@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/gradient"
         android:orientation="vertical"
-        tools:context=".view.HomeFragment">
+        tools:context=".viewModel.homePage.HomeFragment">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/current_weather_imageview"

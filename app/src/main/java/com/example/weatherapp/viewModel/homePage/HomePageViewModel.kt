@@ -6,7 +6,6 @@ import androidx.lifecycle.asLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherapp.R
 import com.example.weatherapp.repository.Repository
-import com.example.weatherapp.view.HomeFragment
 import com.example.weatherapp.viewModel.homePage.recyclers.RecyclerviewsDatasource
 import com.example.weatherapp.viewModel.homePage.recyclers.TodayItemAdapter
 import com.example.weatherapp.viewModel.homePage.recyclers.WeekItemAdapter
