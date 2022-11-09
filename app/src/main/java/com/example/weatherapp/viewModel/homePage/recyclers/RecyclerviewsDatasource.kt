@@ -2,7 +2,7 @@ package com.example.weatherapp.viewModel.homePage.recyclers;
 
 import com.example.weatherapp.repository.Repository
 
-class Datasource {
+class RecyclerviewsDatasource {
 
     fun loadTodayViews(): MutableList<TodayItem> {
         val res = mutableListOf<TodayItem>()

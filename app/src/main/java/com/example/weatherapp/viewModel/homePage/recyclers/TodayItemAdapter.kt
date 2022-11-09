@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.weatherapp.view.HomeFragment
 import com.example.weatherapp.R
+import com.example.weatherapp.viewModel.homePage.HomeFragment
 
 
 class TodayItemAdapter(
@@ -16,6 +16,8 @@ class TodayItemAdapter(
 ) : RecyclerView.Adapter<TodayItemAdapter.ItemViewHolder>() {
 
 
+    class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val temperaturePerHour: TextView = view.findViewById(R.id.temp_at_hour_textview)
 
     class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         val temperaturePerHour: TextView = view.findViewById(R.id.footer_text_news)

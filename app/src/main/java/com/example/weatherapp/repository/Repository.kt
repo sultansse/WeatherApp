@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 
 class Repository private constructor(){
-
+    // by default
     private val _currentTemperatureType = MutableStateFlow<TemperatureType>(TemperatureType.Celcius)
     val currentTemperatureType: Flow<TemperatureType> = _currentTemperatureType
 
@@ -37,31 +37,6 @@ class Repository private constructor(){
         }
     }
 
-    /*
-// add some this kind of validator
-    fun hasInternet(): Boolean{
-        val late init res
-        if (!user.hasInternetConnection){
-            res = false
-            println("u don't have connection")
-//        take data from DB
-        }else{
-            res = true
-//        take data from WebServices
-        }
-        return res
-    }
-*/
-
-/*  var humidity
-  var today_descriptionOfTemp
-  var windiness
-  var pressure
-  var tempOfTime
-  var timeForToday
-  var dayOfWeek
-  var dayTempOfDayWeek
-  var nightTempOfDayWeek*/
 
 val newsRecyclerData = listOf(
     RecyclerItem(
@@ -138,52 +113,52 @@ val newsRecyclerData = listOf(
 
     val weekRecyclerData = listOf(
         WeekItem(
-            R.string.dayOfWeek,/*R.id.weatherIconPerHour,*/
+            R.string.dayOfWeek,
             R.string.dayTempOfDayWeek,
             R.string.nightTempOfDayWeek
         ),
         WeekItem(
-            R.string.dayOfWeek,/*R.id.weatherIconPerHour,*/
+            R.string.dayOfWeek,
             R.string.dayTempOfDayWeek,
             R.string.nightTempOfDayWeek
         ),
         WeekItem(
-            R.string.dayOfWeek,/*R.id.weatherIconPerHour,*/
+            R.string.dayOfWeek,
             R.string.dayTempOfDayWeek,
             R.string.nightTempOfDayWeek
         ),
         WeekItem(
-            R.string.dayOfWeek,/*R.id.weatherIconPerHour,*/
+            R.string.dayOfWeek,
             R.string.dayTempOfDayWeek,
             R.string.nightTempOfDayWeek
         ),
         WeekItem(
-            R.string.dayOfWeek,/*R.id.weatherIconPerHour,*/
+            R.string.dayOfWeek,
             R.string.dayTempOfDayWeek,
             R.string.nightTempOfDayWeek
         ),
         WeekItem(
-            R.string.dayOfWeek,/*R.id.weatherIconPerHour,*/
+            R.string.dayOfWeek,
             R.string.dayTempOfDayWeek,
             R.string.nightTempOfDayWeek
         ),
         WeekItem(
-            R.string.dayOfWeek,/*R.id.weatherIconPerHour,*/
+            R.string.dayOfWeek,
             R.string.dayTempOfDayWeek,
             R.string.nightTempOfDayWeek
         ),
         WeekItem(
-            R.string.dayOfWeek,/*R.id.weatherIconPerHour,*/
+            R.string.dayOfWeek,
             R.string.dayTempOfDayWeek,
             R.string.nightTempOfDayWeek
         ),
         WeekItem(
-            R.string.dayOfWeek,/*R.id.weatherIconPerHour,*/
+            R.string.dayOfWeek,
             R.string.dayTempOfDayWeek,
             R.string.nightTempOfDayWeek
         ),
         WeekItem(
-            R.string.dayOfWeek,/*R.id.weatherIconPerHour,*/
+            R.string.dayOfWeek,
             R.string.dayTempOfDayWeek,
             R.string.nightTempOfDayWeek
         )

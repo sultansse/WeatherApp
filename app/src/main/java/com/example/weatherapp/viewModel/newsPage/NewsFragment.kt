@@ -1,4 +1,4 @@
-package com.example.weatherapp.view
+package com.example.weatherapp.viewModel.newsPage
 
 import android.annotation.SuppressLint
 import android.os.Bundle

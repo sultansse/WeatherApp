@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.weatherapp.view.HomeFragment
 import com.example.weatherapp.R
+import com.example.weatherapp.viewModel.homePage.HomeFragment
 
 
 class WeekItemAdapter(
@@ -16,12 +16,13 @@ class WeekItemAdapter(
 ) : RecyclerView.Adapter<WeekItemAdapter.ItemViewHolder>() {
 
 
+    class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val dayOfWeek: TextView = view.findViewById(R.id.day_of_week_textview)
 
-    class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
-        val dayOfWeek: TextView = view.findViewById(R.id.dayOfWeek)
-//        val weatherIconPerHour: ImageView = view.findViewById(R.id.weatherIconPerHour)
-        val dayTempOfDayWeek: TextView = view.findViewById(R.id.dayTempOfDayWeek)
-        val nightTempOfDayWeek: TextView = view.findViewById(R.id.nightTempOfDayWeek)
+        //        val weatherIconPerHour: ImageView = view.findViewById(R.id.weatherIconPerHour)
+        val dayTempOfDayWeek: TextView = view.findViewById(R.id.daytime_temperature_week_textview)
+        val nightTempOfDayWeek: TextView =
+            view.findViewById(R.id.nighttime_temperature_week_textview)
     }
 
 
