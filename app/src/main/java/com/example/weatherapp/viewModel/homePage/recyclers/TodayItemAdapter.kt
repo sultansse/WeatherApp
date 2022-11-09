@@ -1,6 +1,7 @@
 package com.example.weatherapp.viewModel.homePage.recyclers
 
 
+import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,18 +12,15 @@ import com.example.weatherapp.viewModel.homePage.HomeFragment
 
 
 class TodayItemAdapter(
-    private val context: HomeFragment, //todo homeFragmentViewModel
-    private val todayDataset: MutableList<TodayItem>
+    private val todayDataset:  MutableList<TodayItem>
 ) : RecyclerView.Adapter<TodayItemAdapter.ItemViewHolder>() {
 
 
     class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val temperaturePerHour: TextView = view.findViewById(R.id.temp_at_hour_textview)
+        val temperaturePerHour: TextView = view.findViewById(R.id.time_of_today_textview)
 
-    class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
-        val temperaturePerHour: TextView = view.findViewById(R.id.footer_text_news)
-//        val weatherIconPerHour: ImageView = view.findViewById(R.id.weatherIconPerHour)
-        val eachTimeToday: TextView = view.findViewById(R.id.timeForToday)
+        //        val weatherIconPerHour: ImageView = view.findViewById(R.id.weatherIconPerHour)
+        val eachTimeToday: TextView = view.findViewById(R.id.time_of_today_textview)
     }
 
 
@@ -38,9 +36,10 @@ class TodayItemAdapter(
         val item = todayDataset[position]
 
         //todo troubles with homeFragment migrating to HomePageViewModel
-        holder.temperaturePerHour.text = context.resources.getString(item.tempOfTime)
+        val context = holder.temperaturePerHour.context
+        holder.temperaturePerHour.text = context.getString(item.tempOfTime)
 //        holder.weatherIconPerHour.setImageResource(item.weatherIconPerHour)
-        holder.eachTimeToday.text = context.resources.getString(item.timeForToday)
+        holder.eachTimeToday.text = context.getString(item.timeForToday)
     }
 
 

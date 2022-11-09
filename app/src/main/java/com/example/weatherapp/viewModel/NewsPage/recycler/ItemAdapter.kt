@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherapp.R
-import com.example.weatherapp.view.NewsFragment
 import com.example.weatherapp.viewModel.homePage.recyclers.TodayItemAdapter
+import com.example.weatherapp.viewModel.newsPage.NewsFragment
 
 class ItemAdapter (
     private val context: NewsFragment

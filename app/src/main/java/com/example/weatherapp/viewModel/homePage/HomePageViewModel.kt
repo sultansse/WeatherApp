@@ -23,10 +23,10 @@ class HomePageViewModel : ViewModel() {
         "$temperature${type.toFormattedString()}"
     }.asLiveData()
 
-    fun todayHourlyRecyclerview(parent: HomeFragment, view: View) {
+    fun todayHourlyRecyclerview( view: View) {
         val todayDataset = RecyclerviewsDatasource().loadTodayViews()
         val todayRecyclerview = view.findViewById<RecyclerView>(R.id.temp_hourly_recyclerview)
-        todayRecyclerview.adapter = TodayItemAdapter(parent, todayDataset)
+        todayRecyclerview.adapter = TodayItemAdapter(todayDataset)
         todayRecyclerview.setHasFixedSize(true)
     }
 

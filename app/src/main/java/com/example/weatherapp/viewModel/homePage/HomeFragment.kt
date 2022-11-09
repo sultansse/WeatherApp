@@ -30,7 +30,9 @@ class HomeFragment : Fragment() {
             binding.currentTempTextview.text = it
         }
 
-        viewModel.todayHourlyRecyclerview(this, view)
+
+
+        viewModel.todayHourlyRecyclerview(view)
 
         viewModel.dailyWeekRecyclerview(this, view)
 
@@ -41,7 +43,3 @@ class HomeFragment : Fragment() {
         _binding = null
     }
 }
-
-
-
-
