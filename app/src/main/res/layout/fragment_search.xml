@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true">
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="12dp"
     android:orientation="vertical"
     android:background="@drawable/gradient">
 
-    <SearchView
-        android:id="@+id/searchView"
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:queryHint="City Name"
@@ -57,12 +67,16 @@
         </LinearLayout>
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/listView"
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"/>
+        android:layout_marginTop="35dp"
+        android:paddingBottom="?attr/actionBarSize"
+        android:clipToPadding="false"
+        tools:itemCount="4"
+        android:id="@+id/recyclerViewSearch"
+        android:layout_margin="4dp"
+        tools:listitem="@layout/search_items"/>
 
 </LinearLayout>
+    </ScrollView>

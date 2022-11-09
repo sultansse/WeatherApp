@@ -1,17 +1,41 @@
 package com.example.weatherapp.viewModel.searchPage
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.util.Log
+import android.view.*
 import android.widget.ArrayAdapter
 import android.widget.ListView
-import android.widget.SearchView
 import android.widget.Toast
+import androidx.appcompat.widget.SearchView
+import androidx.appcompat.widget.SearchView.OnQueryTextListener
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.weatherapp.City1Activity
+import com.example.weatherapp.City2Activity
 import com.example.weatherapp.R
+import com.example.weatherapp.viewModel.searchPage.recyclers.ItemsAdapter
+import com.example.weatherapp.viewModel.searchPage.recyclers.ItemsModal
+import kotlinx.android.synthetic.main.fragment_news.*
+import kotlinx.android.synthetic.main.fragment_search.*
+import java.util.Locale.filter
 
-class SearchFragment : Fragment() {
+class SearchFragment : Fragment(), ItemsAdapter.ClickListener {
+
+    val imageName = arrayOf(
+        ItemsModal("Astana", "Astana (earlier - Akmolinsk, Tselinograd, Akmola, Nur-Sultan) - the capital of the Republic of Kazakhstan", R.drawable.astana),
+        ItemsModal("Aktobe", "Aktobe (until 1999 Aktobe) is a city in Western Kazakhstan, the administrative center of the Aktobe region", R.drawable.aktobe),
+        ItemsModal("Karaganda", "Karaganda is a city in Kazakhstan, the administrative center of the Karaganda region", R.drawable.karaganda),
+        ItemsModal("Almaty", "Alma-Ata, Almaty (Almaty until 1921 - Verny) - a city of republican significance in Kazakhstan", R.drawable.almaty),
+        ItemsModal("Astana", "Astana (earlier - Akmolinsk, Tselinograd, Akmola, Nur-Sultan) - the capital of the Republic of Kazakhstan", R.drawable.astana),
+        ItemsModal("Aktobe", "Aktobe (until 1999 Aktobe) is a city in Western Kazakhstan, the administrative center of the Aktobe region", R.drawable.aktobe),
+        ItemsModal("Karaganda", "Karaganda is a city in Kazakhstan, the administrative center of the Karaganda region", R.drawable.karaganda),
+        ItemsModal("Almaty", "Alma-Ata, Almaty (Almaty until 1921 - Verny) - a city of republican significance in Kazakhstan", R.drawable.almaty)
+    )
+
+    val itemsModalList = ArrayList<ItemsModal>()
+    var itemsAdapter : ItemsAdapter? = null;
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,52 +48,65 @@ class SearchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        for (items in imageName) {
+            itemsModalList.add(items)
+        }
+        itemsAdapter = ItemsAdapter(this);
+        itemsAdapter!!.setData(itemsModalList)
+        recyclerViewSearch.layoutManager = LinearLayoutManager(requireContext())
+        recyclerViewSearch.setHasFixedSize(true)
+        recyclerViewSearch.adapter = itemsAdapter
+    }
 
-        val search = view.findViewById<SearchView>(R.id.searchView)
-        val listView = view.findViewById<ListView>(R.id.listView)
-        val names = arrayOf(
-            "Абай", "Акколь", "Аксай", "Аксу", "Актау", "Актобе",
-            "Алга", "Алматы", "Алтай", "Аральск", "Аркалык", "Арыс",
-            "Астана", "Атбасар", "Атырау", "Аягоз", "Байконур",
-            "Балхаш", "Булаево", "Державинск", "Ерейментау",
-            "Есик", "Есиль", "Жанаозен", "Жанатас", "Жаркент",
-            "Жезказган", "Жем", "Жетысай", "Житикара", "Зайсан",
-            "Казалинск", "Кандыагаш", "Караганда", "Каражал",
-            "Каратау", "Каркаралинск", "Каскелен", "Кентау",
-            "Кокшетау", "Конаев", "Костанай", "Косшы", "Кульсары",
-            "Курчатов", "Кызылорда", "Ленгер", "Лисаковск", "Макинск",
-            "Мамлютка", "Павлодар", "Петропавловск", "Приозёрск", "Риддер",
-            "Рудный", "Сарань", "Сарканд", "Сарыагаш", "Сатпаев", "Семей",
-            "Сергеевка", "Серебрянск", "Степногорск", "Степняк", "Тайынша",
-            "Талгар", "Талдыкорган", "Тараз", "Текели", "Темир", "Темиртау",
-            "Тобыл", "Туркестан", "Уральск", "Усть-Каменогорск", "Ушарал",
-            "Уштобе", "Форт-Шевченко", "Хромтау", "Шалкар", "Шар", "Шардара",
-            "Шахтинск", "Шемонаиха", "Шу", "Шымкент", "Щучинск", "Экибастуз"
-        )
+    override fun ClickedItem(itemsModal: ItemsModal) {
+        Log.e("TAG", itemsModal.name)
+        when(itemsModal.name){
+            "Astana" ->
+                startActivity(Intent(requireContext(), City1Activity::class.java))
+            "Aktobe" ->
+                startActivity(Intent(requireContext(), City2Activity::class.java))
+         else -> {
+             Toast.makeText(requireContext(), "No Action",  Toast.LENGTH_LONG).show()
+         }
+        }
+    }
 
-        val adapter: ArrayAdapter<String> = ArrayAdapter(
-            requireContext(),
-            android.R.layout.simple_list_item_1,
-            names
-        )
-        listView.adapter = adapter
-        search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(p0: String?): Boolean {
-                search.clearFocus()
-                if (names.contains(p0)) {
-                    adapter.filter.filter(p0)
-                } else {
-                    Toast.makeText(requireContext(), "Item not found", Toast.LENGTH_LONG).show()
-                }
-                return false
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.bottom_nav_menu, menu)
+        val searchItem = menu.findItem(R.id.action_search)
+        val searchView = searchItem.actionView as SearchView
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return true
             }
 
-            override fun onQueryTextChange(p0: String?): Boolean {
-                adapter.filter.filter(p0)
-                return false
+            override fun onQueryTextChange(newText: String?): Boolean {
+                return true
             }
+
         })
 
     }
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
