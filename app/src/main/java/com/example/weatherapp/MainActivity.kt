@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity() {
                 R.id.homeFragment,
                 R.id.newsFragment,
                 R.id.searchFragment,
-                R.id.aboutFragment,
                 R.id.settingsFragment
             )
         )

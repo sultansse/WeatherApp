@@ -14,16 +14,6 @@ import com.example.weatherapp.viewModel.NewsPage.NewsPageViewModel
 import com.example.weatherapp.viewModel.NewsPage.recycler.DatasourceNews
 import com.example.weatherapp.viewModel.NewsPage.recycler.ItemAdapter
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [NewsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class NewsFragment : Fragment() {
 
     private val adapter =  ItemAdapter(this)
