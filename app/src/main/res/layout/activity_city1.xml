@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".City1Activity">
+    tools:context=".viewModel.searchPage.activities.City1Activity">
 
     <ImageView
         android:layout_width="wrap_content"

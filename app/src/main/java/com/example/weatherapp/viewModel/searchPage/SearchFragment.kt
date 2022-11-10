@@ -4,58 +4,58 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import android.widget.ArrayAdapter
-import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
-import androidx.appcompat.widget.SearchView.OnQueryTextListener
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.weatherapp.City1Activity
-import com.example.weatherapp.City2Activity
 import com.example.weatherapp.R
+import com.example.weatherapp.databinding.FragmentHomeBinding
+import com.example.weatherapp.databinding.FragmentSearchBinding
+import com.example.weatherapp.viewModel.homePage.HomePageViewModel
+import com.example.weatherapp.viewModel.searchPage.activities.City1Activity
+import com.example.weatherapp.viewModel.searchPage.activities.City2Activity
 import com.example.weatherapp.viewModel.searchPage.recyclers.ItemsAdapter
 import com.example.weatherapp.viewModel.searchPage.recyclers.ItemsModal
-import kotlinx.android.synthetic.main.fragment_news.*
 import kotlinx.android.synthetic.main.fragment_search.*
-import java.util.Locale.filter
 
 class SearchFragment : Fragment(), ItemsAdapter.ClickListener {
 
-    val imageName = arrayOf(
-        ItemsModal("Astana", "Astana (earlier - Akmolinsk, Tselinograd, Akmola, Nur-Sultan) - the capital of the Republic of Kazakhstan", R.drawable.astana),
-        ItemsModal("Aktobe", "Aktobe (until 1999 Aktobe) is a city in Western Kazakhstan, the administrative center of the Aktobe region", R.drawable.aktobe),
-        ItemsModal("Karaganda", "Karaganda is a city in Kazakhstan, the administrative center of the Karaganda region", R.drawable.karaganda),
-        ItemsModal("Almaty", "Alma-Ata, Almaty (Almaty until 1921 - Verny) - a city of republican significance in Kazakhstan", R.drawable.almaty),
-        ItemsModal("Astana", "Astana (earlier - Akmolinsk, Tselinograd, Akmola, Nur-Sultan) - the capital of the Republic of Kazakhstan", R.drawable.astana),
-        ItemsModal("Aktobe", "Aktobe (until 1999 Aktobe) is a city in Western Kazakhstan, the administrative center of the Aktobe region", R.drawable.aktobe),
-        ItemsModal("Karaganda", "Karaganda is a city in Kazakhstan, the administrative center of the Karaganda region", R.drawable.karaganda),
-        ItemsModal("Almaty", "Alma-Ata, Almaty (Almaty until 1921 - Verny) - a city of republican significance in Kazakhstan", R.drawable.almaty)
-    )
+    private var _binding: FragmentSearchBinding? = null
+    private val binding get() = _binding!!
+    val viewModel: HomePageViewModel by viewModels()
 
-    val itemsModalList = ArrayList<ItemsModal>()
-    var itemsAdapter : ItemsAdapter? = null;
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search, container, false)
+    ): View {
+        _binding = FragmentSearchBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        for (items in imageName) {
-            itemsModalList.add(items)
-        }
-        itemsAdapter = ItemsAdapter(this);
-        itemsAdapter!!.setData(itemsModalList)
+        val itemsAdapter = ItemsAdapter(this);
+        itemsAdapter.submitList(allCities)
         recyclerViewSearch.layoutManager = LinearLayoutManager(requireContext())
         recyclerViewSearch.setHasFixedSize(true)
         recyclerViewSearch.adapter = itemsAdapter
+
+
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                val filteredList = allCities.filter { it.name.contains(newText ?: "", ignoreCase = false) }
+                itemsAdapter.submitList(filteredList)
+                return true
+            }
+
+        })
     }
 
     override fun ClickedItem(itemsModal: ItemsModal) {
@@ -71,23 +71,33 @@ class SearchFragment : Fragment(), ItemsAdapter.ClickListener {
         }
     }
 
+    companion object {
+        private val allCities = listOf(
+            ItemsModal("Astana", "Astana (earlier - Akmolinsk, Tselinograd, Akmola, Nur-Sultan) - the capital of the Republic of Kazakhstan", R.drawable.astana),
+            ItemsModal("Aktobe", "Aktobe (until 1999 Aktobe) is a city in Western Kazakhstan, the administrative center of the Aktobe region", R.drawable.aktobe),
+            ItemsModal("Karaganda", "Karaganda is a city in Kazakhstan, the administrative center of the Karaganda region", R.drawable.karaganda),
+            ItemsModal("Almaty", "Alma-Ata, Almaty (Almaty until 1921 - Verny) - a city of republican significance in Kazakhstan", R.drawable.almaty),
+            ItemsModal("Astana", "Astana (earlier - Akmolinsk, Tselinograd, Akmola, Nur-Sultan) - the capital of the Republic of Kazakhstan", R.drawable.astana),
+            ItemsModal("Aktobe", "Aktobe (until 1999 Aktobe) is a city in Western Kazakhstan, the administrative center of the Aktobe region", R.drawable.aktobe),
+            ItemsModal("Karaganda", "Karaganda is a city in Kazakhstan, the administrative center of the Karaganda region", R.drawable.karaganda),
+            ItemsModal("Almaty", "Alma-Ata, Almaty (Almaty until 1921 - Verny) - a city of republican significance in Kazakhstan", R.drawable.almaty)
+        )
+    }
+
+/*
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.bottom_nav_menu, menu)
-        val searchItem = menu.findItem(R.id.action_search)
-        val searchView = searchItem.actionView as SearchView
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                return true
-            }
 
-            override fun onQueryTextChange(newText: String?): Boolean {
-                return true
-            }
-
-        })
 
     }
+*/
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
 }
 
 
