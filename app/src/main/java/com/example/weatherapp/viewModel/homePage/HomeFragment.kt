@@ -18,6 +18,7 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         _binding = FragmentHomeBinding.inflate(layoutInflater)
         return binding.root
     }
@@ -25,14 +26,13 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         viewModel.temperature.observe(viewLifecycleOwner) {
             binding.currentTempTextview.text = it
         }
-
 //        binding.tempWeekRecyclerview.itemWeekDetails.setOnClickListener {
 //            viewModel.navToWeekDetails(view)
 //        }
-
 //        binding.tempWeekRecyclerview.setOnClickListener(){
 //            Toast.makeText(context, "item is pressed", Toast.LENGTH_LONG).show();
 //            viewModel.navToWeekDetails(view)

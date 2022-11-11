@@ -1,6 +1,8 @@
 package com.example.weatherapp
 
+import android.app.Dialog
 import android.os.Bundle
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -40,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-  /*  override fun onBackPressed() {
+    override fun onBackPressed() {
         val dialog = Dialog(this@MainActivity)
 
         dialog.setContentView(R.layout.custom_exit_dialog)
@@ -56,7 +58,7 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
         dialog.show()
-    }*/
+    }
 
 
 }
