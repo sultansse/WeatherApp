@@ -34,7 +34,7 @@ class HomeFragment : Fragment() {
 
         viewModel.todayHourlyRecyclerview(view)
 
-        viewModel.dailyWeekRecyclerview(this, view)
+        viewModel.dailyWeekRecyclerview(view)
 
     }
 

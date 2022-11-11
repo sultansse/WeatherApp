@@ -30,10 +30,10 @@ class HomePageViewModel : ViewModel() {
         todayRecyclerview.setHasFixedSize(true)
     }
 
-    fun dailyWeekRecyclerview(parent: HomeFragment, view: View) {
+    fun dailyWeekRecyclerview(view: View) {
         val weekDataset = RecyclerviewsDatasource().loadWeekViews()
         val weekRecyclerview = view.findViewById<RecyclerView>(R.id.temp_week_recyclerview)
-        weekRecyclerview.adapter = WeekItemAdapter(parent, weekDataset)
+        weekRecyclerview.adapter = WeekItemAdapter(weekDataset)
         weekRecyclerview.setHasFixedSize(true)
     }
 

@@ -7,11 +7,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherapp.R
-import com.example.weatherapp.viewModel.homePage.HomeFragment
 
 
 class WeekItemAdapter(
-    private val context: HomeFragment,
     private val weekDataset: MutableList<WeekItem>
 ) : RecyclerView.Adapter<WeekItemAdapter.ItemViewHolder>() {
 
@@ -35,6 +33,7 @@ class WeekItemAdapter(
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = weekDataset[position]
+        val context = holder.dayOfWeek.context
 
         holder.dayOfWeek.text = context.resources.getString(item.dayOfWeek)
 //        holder.weatherIconPerHour.setImageResource(item.weatherIconPerHour)

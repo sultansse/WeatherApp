@@ -3,16 +3,16 @@ package com.example.weatherapp.viewModel.searchPage
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.weatherapp.R
-import com.example.weatherapp.databinding.FragmentHomeBinding
 import com.example.weatherapp.databinding.FragmentSearchBinding
-import com.example.weatherapp.viewModel.homePage.HomePageViewModel
 import com.example.weatherapp.viewModel.searchPage.activities.City1Activity
 import com.example.weatherapp.viewModel.searchPage.activities.City2Activity
 import com.example.weatherapp.viewModel.searchPage.recyclers.ItemsAdapter
@@ -23,7 +23,7 @@ class SearchFragment : Fragment(), ItemsAdapter.ClickListener {
 
     private var _binding: FragmentSearchBinding? = null
     private val binding get() = _binding!!
-    val viewModel: HomePageViewModel by viewModels()
+    val viewModel: SearchPageViewModel by viewModels()
 
 
     override fun onCreateView(

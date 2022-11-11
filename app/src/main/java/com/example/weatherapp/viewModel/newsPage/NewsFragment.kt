@@ -1,22 +1,14 @@
 package com.example.weatherapp.viewModel.newsPage
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.RecyclerView
-import com.example.weatherapp.R
 import com.example.weatherapp.databinding.FragmentNewsBinding
-import com.example.weatherapp.viewModel.NewsPage.NewsPageViewModel
-import com.example.weatherapp.viewModel.NewsPage.recycler.DatasourceNews
-import com.example.weatherapp.viewModel.NewsPage.recycler.ItemAdapter
 
 class NewsFragment : Fragment() {
-
-    private val adapter =  ItemAdapter(this)
 
     val viewModel: NewsPageViewModel by viewModels()
     private var _binding: FragmentNewsBinding? = null
@@ -30,22 +22,22 @@ class NewsFragment : Fragment() {
         return binding.root
     }
 
-
-    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel.loadRecyclerview(view, "top") // preload recycler
 
-//        val todayDataset = Datasource().loadTodayViews()
-//        val todayRecyclerview = view.findViewById<RecyclerView>(R.id.todayDetailsRecycler)
-//        todayRecyclerview?.adapter = TodayItemAdapter(this, todayDataset)
-//        todayRecyclerview?.setHasFixedSize(true)
+        binding.tabLayout.getTabAt(0)?.view?.setOnClickListener() {
+            viewModel.loadRecyclerview(view, "top")
+        }
+        binding.tabLayout.getTabAt(1)?.view?.setOnClickListener() {
+            viewModel.loadRecyclerview(view, "daily")
+        }
+        binding.tabLayout.getTabAt(2)?.view?.setOnClickListener() {
+            viewModel.loadRecyclerview(view, "other")
+        }
 
-        val verticalNews = DatasourceNews().loadNewsViews()
-        val newsRecyclerview = view.findViewById<RecyclerView>(R.id.recyclerView2)
-        newsRecyclerview?.adapter = adapter
-        adapter.submitList(verticalNews)
-        newsRecyclerview?.setHasFixedSize(true)
+
     }
 
 }

@@ -34,6 +34,7 @@
     <!--Search Page strings ======================= -->
     <string name="kaskelen_kz">Kaskelen, KZ</string>
     <string name="_20_c">20 °C</string>
+    <!--News Page strings ======================= -->
     <string name="news_title">News</string>
     <string name="news_text">News text, long text with information and so on will be filled soon!</string>
 </resources>

@@ -2,13 +2,13 @@ package com.example.weatherapp.repository
 
 import com.example.weatherapp.R
 import com.example.weatherapp.repository.model.TemperatureType
-import com.example.weatherapp.viewModel.NewsPage.recycler.RecyclerItem
 import com.example.weatherapp.viewModel.homePage.recyclers.TodayItem
 import com.example.weatherapp.viewModel.homePage.recyclers.WeekItem
+import com.example.weatherapp.viewModel.newsPage.recycler.RecyclerItem
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 
-class Repository private constructor(){
+class Repository private constructor() {
     // by default
     private val _currentTemperatureType = MutableStateFlow<TemperatureType>(TemperatureType.Celcius)
     val currentTemperatureType: Flow<TemperatureType> = _currentTemperatureType
@@ -37,46 +37,170 @@ class Repository private constructor(){
         }
     }
 
+//    val tabs = listOf(
+//        NewsType(
+//            title = R.string.news_title
+//            text = R.string.news_text
+//        ),
+//        NewsType(
+//
+//            title = R.string.news_title.toString(),
+//            text = R.string.news_text.toString()
+//        ),
+//        NewsType(
+//
+//            title = R.string.news_title.toString(),
+//            text = R.string.news_text.toString()
+//        ),
+//    )
 
-val newsRecyclerData = listOf(
-    RecyclerItem(
-        /*image also*/
-        R.string.news_title,
-        R.string.news_text,
+    val topNewsRecyclerData = listOf(
+        RecyclerItem(
+            /*image also*/
+            R.string.news_title,
+            R.string.news_text,
 
-    ),
-    RecyclerItem(
-        /*image also*/
-        R.string.news_title,
-        R.string.news_text,
+            ),
+        RecyclerItem(
+            /*image also*/
+            R.string.news_title,
+            R.string.news_text,
 
-    ),
-    RecyclerItem(
-        /*image also*/
-        R.string.news_title,
-        R.string.news_text,
+            ),
+        RecyclerItem(
+            /*image also*/
+            R.string.news_title,
+            R.string.news_text,
 
-    ),
-    RecyclerItem(
-        /*image also*/
-        R.string.news_title,
-        R.string.news_text,
+            ),
+        RecyclerItem(
+            /*image also*/
+            R.string.news_title,
+            R.string.news_text,
 
-    ),
-    RecyclerItem(
-        /*image also*/
-        R.string.news_title,
-        R.string.news_text,
+            ),
+        RecyclerItem(
+            /*image also*/
+            R.string.news_title,
+            R.string.news_text,
 
-    ),
-    RecyclerItem(
-        /*image also*/
-        R.string.news_title,
-        R.string.news_text,
+            ),
+        RecyclerItem(
+            /*image also*/
+            R.string.news_title,
+            R.string.news_text,
+
+            ),
+        RecyclerItem(
+            /*image also*/
+            R.string.news_title,
+            R.string.news_text,
+
+            ),
+        RecyclerItem(
+            /*image also*/
+            R.string.news_title,
+            R.string.news_text,
+
+            ),
+        RecyclerItem(
+            /*image also*/
+            R.string.news_title,
+            R.string.news_text,
+
+            ),
+        RecyclerItem(
+            /*image also*/
+            R.string.news_title,
+            R.string.news_text,
+
+            ),
+        RecyclerItem(
+            /*image also*/
+            R.string.news_title,
+            R.string.news_text,
+
+            ),
+        RecyclerItem(
+            /*image also*/
+            R.string.news_title,
+            R.string.news_text,
+
+            )
 
     )
+    val dailyNewsRecyclerData = listOf(
+        RecyclerItem(
+            /*image also*/
+            R.string.news_title,
+            R.string.news_text,
 
-)
+            ),
+        RecyclerItem(
+            /*image also*/
+            R.string.news_title,
+            R.string.news_text,
+
+            ),
+        RecyclerItem(
+            /*image also*/
+            R.string.news_title,
+            R.string.news_text,
+
+            ),
+        RecyclerItem(
+            /*image also*/
+            R.string.news_title,
+            R.string.news_text,
+
+            )
+
+    )
+    val otherNewsRecyclerData = listOf(
+        RecyclerItem(
+            /*image also*/
+            R.string.news_title,
+            R.string.news_text,
+
+            ),
+        RecyclerItem(
+            /*image also*/
+            R.string.news_title,
+            R.string.news_text,
+
+            ),
+        RecyclerItem(
+            /*image also*/
+            R.string.news_title,
+            R.string.news_text,
+
+            ),
+        RecyclerItem(
+            /*image also*/
+            R.string.news_title,
+            R.string.news_text,
+
+            ),
+        RecyclerItem(
+            /*image also*/
+            R.string.news_title,
+            R.string.news_text,
+
+            ),
+        RecyclerItem(
+            /*image also*/
+            R.string.news_title,
+            R.string.news_text,
+
+            ),
+        RecyclerItem(
+            /*image also*/
+            R.string.news_title,
+            R.string.news_text,
+
+            )
+
+    )
 
 
     //  data from API network ==============================
