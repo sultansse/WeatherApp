@@ -26,6 +26,8 @@ class WeekDetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
         // not good /stacking
         binding.button.setOnClickListener() {
             Navigation.findNavController(view).navigate(R.id.action_to_homeFragment)

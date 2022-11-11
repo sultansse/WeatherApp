@@ -1,5 +1,6 @@
 package com.example.weatherapp.viewModel.homePage
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.weatherapp.databinding.FragmentHomeBinding
+import java.text.SimpleDateFormat
+import java.util.*
 
 class HomeFragment : Fragment() {
 
@@ -24,20 +27,17 @@ class HomeFragment : Fragment() {
     }
 
 
+    @SuppressLint("SimpleDateFormat")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.todayDateTextview.text =
+            SimpleDateFormat("dd-LLLL").format(Calendar.getInstance().time).toString()
 
         viewModel.temperature.observe(viewLifecycleOwner) {
             binding.currentTempTextview.text = it
         }
 //        binding.tempWeekRecyclerview.itemWeekDetails.setOnClickListener {
-//            viewModel.navToWeekDetails(view)
-//        }
-//        binding.tempWeekRecyclerview.setOnClickListener(){
-//            Toast.makeText(context, "item is pressed", Toast.LENGTH_LONG).show();
-//            viewModel.navToWeekDetails(view)
-//        }
-//        binding.tempWeekRecyclerview.WeekDetailsFragment.itemWeekDetails.setOnClickListener(){
 //            viewModel.navToWeekDetails(view)
 //        }
         viewModel.todayHourlyRecyclerview(view)
