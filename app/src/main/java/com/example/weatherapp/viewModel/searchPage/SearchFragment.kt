@@ -74,13 +74,26 @@ class SearchFragment : Fragment(), ItemsAdapter.ClickListener {
     companion object {
         private val allCities = listOf(
             ItemsModal("Astana", "Astana (earlier - Akmolinsk, Tselinograd, Akmola, Nur-Sultan) - the capital of the Republic of Kazakhstan", R.drawable.astana),
+            ItemsModal("Almaty", "Alma-Ata, Almaty (until 1921 - Verny) - the former capital of the Republic of Kazakhstan", R.drawable.almaty),
             ItemsModal("Aktobe", "Aktobe (until 1999 Aktobe) is a city in Western Kazakhstan, the administrative center of the Aktobe region", R.drawable.aktobe),
             ItemsModal("Karaganda", "Karaganda is a city in Kazakhstan, the administrative center of the Karaganda region", R.drawable.karaganda),
-            ItemsModal("Almaty", "Alma-Ata, Almaty (Almaty until 1921 - Verny) - a city of republican significance in Kazakhstan", R.drawable.almaty),
-            ItemsModal("Astana", "Astana (earlier - Akmolinsk, Tselinograd, Akmola, Nur-Sultan) - the capital of the Republic of Kazakhstan", R.drawable.astana),
-            ItemsModal("Aktobe", "Aktobe (until 1999 Aktobe) is a city in Western Kazakhstan, the administrative center of the Aktobe region", R.drawable.aktobe),
-            ItemsModal("Karaganda", "Karaganda is a city in Kazakhstan, the administrative center of the Karaganda region", R.drawable.karaganda),
-            ItemsModal("Almaty", "Alma-Ata, Almaty (Almaty until 1921 - Verny) - a city of republican significance in Kazakhstan", R.drawable.almaty)
+            ItemsModal("Shymkent", "Shymkent (a city in the south of Kazakhstan, one of the three cities of the country)", R.drawable.shymkent),
+            ItemsModal("Taraz", "Taraz (formerly Zhambyl) is the administrative center of Zhambyl Province in Kazakhstan.", R.drawable.taraz),
+            ItemsModal("Pavlodar", "Pavlodar is a city located in northeastern Kazakhstan, 450 km northeast of the capital Astana", R.drawable.pavlodar),
+            ItemsModal("Ust-Kamenogorsk", "Ust-Kamenogorsk (Kazakh: Öskemen Sound) is the largest city in eastern Kazakhstan", R.drawable.oskemen),
+            ItemsModal("Semey", "Semey (until 2007 - Semipalatinsk) is a city in eastern Kazakhstanlocated on both banks of the Irtysh River", R.drawable.semey),
+            ItemsModal("Atyrau", "Atyrau (until 1991 - Guryev) is a city in Kazakhstan, the administrative center of Atyrau Region", R.drawable.atyrau),
+            ItemsModal("Kyzylorda", "Kyzylorda (formerly Kamysty, Ak-Mechet, Perovsk, Kzyl-Orda) is a city in Kazakhstan", R.drawable.kyzylorda),
+            ItemsModal("Kostanay", "Kostanay (formerly - Nikolaevsk, Kostanay - a city in Kazakhstan, the administrative center of Kostanay region", R.drawable.kostanay),
+            ItemsModal("Uralsk", "Uralsk or Oral (until 1775 - Yaitsky town) is a city in the European part of Kazakhstan", R.drawable.oral),
+            ItemsModal("Petropavlovsk", "Petropavlovsk is a city in northern Kazakhstan, the administrative center of the NKR", R.drawable.petropavl),
+            ItemsModal("Aktau", "Aktau (Kazakh: Sound Aktau, Aqtau; White Mountain) is a port city in the south-west of Kazakhstan", R.drawable.aktau),
+            ItemsModal("Turkestan", "Turkestan is a city in southern Kazakhstan, near the Syr Darya River", R.drawable.turkistan),
+            ItemsModal("Temirtau", "Temirtau (Kazakh: Теміртау) is a city in Kazakhstan, located in the Karaganda Region", R.drawable.temirtau),
+            ItemsModal("Kokshetau", "Kokshetau (until 1993 - Kokchetav) is a city in Kazakhstan, since 1999", R.drawable.kokshetau),
+            ItemsModal("Taldykorgan", "Taldykorgan (until 1993 - Taldy-Kurgan, until 1920 - Gavrilovka) is a city in the south-east", R.drawable.taldykorgan),
+            ItemsModal("Ekibastuz", "Ekibastuz is a city of regional subordination in the west of the Pavlodar region of Kazakhstan", R.drawable.ekibastuz),
+            ItemsModal("Rudnyi", "A city on the Tobol River in the Kostanay region of Kazakhstan", R.drawable.rudnyi)
         )
     }
 
@@ -88,8 +101,6 @@ class SearchFragment : Fragment(), ItemsAdapter.ClickListener {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.bottom_nav_menu, menu)
-
-
     }
 */
 
