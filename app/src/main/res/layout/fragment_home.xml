@@ -183,12 +183,11 @@
             android:layout_height="460dp"
             android:layout_marginHorizontal="18dp"
             android:layout_marginTop="38dp"
-            android:layout_marginBottom="80dp"
+            android:layout_marginBottom="10dp"
             android:alpha="30"
             android:background="@drawable/background_block"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/hourly_temp_block_view" />
 
