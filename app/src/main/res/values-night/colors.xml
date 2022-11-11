@@ -11,7 +11,7 @@
     <color name="CenterGradient">#134CB5</color>
     <color name="EndGradient">#0B42AB</color>
     <color name="blue_primary">#124BB4</color>
-    <color name="backgroundTransparent">#32001026</color>
-    <color name="blue_stroke_transparent">#32124BB4</color>
+    <color name="backgroundTransparent">#3277889E</color>
+    <color name="blue_stroke_transparent">#32005AFF</color>
 
 </resources>

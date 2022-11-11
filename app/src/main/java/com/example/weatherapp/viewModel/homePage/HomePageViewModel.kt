@@ -3,6 +3,7 @@ package com.example.weatherapp.viewModel.homePage
 import android.view.View
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherapp.R
 import com.example.weatherapp.repository.Repository
@@ -14,7 +15,7 @@ import kotlinx.coroutines.flow.combine
 class HomePageViewModel : ViewModel() {
 
     private val repository = Repository.getInstance()
-    val currentTemperatureType = repository.currentTemperatureType.asLiveData()
+
 
     val temperature = combine(
         repository.temperatureToday,
@@ -23,7 +24,7 @@ class HomePageViewModel : ViewModel() {
         "$temperature${type.toFormattedString()}"
     }.asLiveData()
 
-    fun todayHourlyRecyclerview( view: View) {
+    fun todayHourlyRecyclerview(view: View) {
         val todayDataset = RecyclerviewsDatasource().loadTodayViews()
         val todayRecyclerview = view.findViewById<RecyclerView>(R.id.temp_hourly_recyclerview)
         todayRecyclerview.adapter = TodayItemAdapter(todayDataset)
@@ -32,9 +33,13 @@ class HomePageViewModel : ViewModel() {
 
     fun dailyWeekRecyclerview(view: View) {
         val weekDataset = RecyclerviewsDatasource().loadWeekViews()
-        val weekRecyclerview = view.findViewById<RecyclerView>(R.id.temp_week_recyclerview)
-        weekRecyclerview.adapter = WeekItemAdapter(weekDataset)
+        val weekRecyclerview = view.findViewById<RecyclerView>(R.id.tempWeekRecyclerview)
+        weekRecyclerview.adapter = WeekItemAdapter(weekDataset, view)
         weekRecyclerview.setHasFixedSize(true)
+    }
+
+    fun navToWeekDetails(view: View) {
+        Navigation.findNavController(view).navigate(R.id.action_to_weekDetails)
     }
 
 

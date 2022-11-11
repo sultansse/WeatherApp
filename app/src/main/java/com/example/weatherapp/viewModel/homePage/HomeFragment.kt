@@ -14,7 +14,6 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -23,20 +22,29 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         viewModel.temperature.observe(viewLifecycleOwner) {
             binding.currentTempTextview.text = it
         }
 
+//        binding.tempWeekRecyclerview.itemWeekDetails.setOnClickListener {
+//            viewModel.navToWeekDetails(view)
+//        }
 
-
+//        binding.tempWeekRecyclerview.setOnClickListener(){
+//            Toast.makeText(context, "item is pressed", Toast.LENGTH_LONG).show();
+//            viewModel.navToWeekDetails(view)
+//        }
+//        binding.tempWeekRecyclerview.WeekDetailsFragment.itemWeekDetails.setOnClickListener(){
+//            viewModel.navToWeekDetails(view)
+//        }
         viewModel.todayHourlyRecyclerview(view)
-
         viewModel.dailyWeekRecyclerview(view)
 
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

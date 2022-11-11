@@ -208,13 +208,16 @@
         </com.google.android.material.textview.MaterialTextView>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/temp_week_recyclerview"
+            android:id="@+id/tempWeekRecyclerview"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginHorizontal="30dp"
             android:layout_marginVertical="5dp"
             android:orientation="vertical"
             android:scrollbars="vertical"
+            android:longClickable="true"
+            android:clickable="true"
+            android:focusable="true"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="@+id/week_block_view"
             app:layout_constraintEnd_toEndOf="@+id/week_block_view"
