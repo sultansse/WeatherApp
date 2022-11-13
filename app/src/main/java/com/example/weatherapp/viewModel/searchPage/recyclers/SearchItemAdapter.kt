@@ -10,15 +10,23 @@ import com.example.weatherapp.R
 
 class SearchItemAdapter(
     private val view: View,
-    private val dataset: MutableList<ItemCity>
+    private var dataset: MutableList<ItemCity>
 ) : RecyclerView.Adapter<SearchItemAdapter.ItemViewHolder>() {
 
+//    val searchFilter: SearchFilter = SearchFilter()
+
+//    @SuppressLint("NotifyDataSetChanged")
+//    fun filter(filterList: MutableList<ItemCity>) {
+//        dataset = filterList
+//        notifyDataSetChanged()
+//    }
 
     class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val img: ImageView = view.findViewById(R.id.RecycleItemImage)
         val name: TextView = view.findViewById(R.id.RecycleItemName)
         val desc: TextView = view.findViewById(R.id.RecycleItemDesc)
     }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         val adapterLayout =

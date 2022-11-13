@@ -13,8 +13,7 @@ class SearchPageViewModel : ViewModel() {
     val repository = Repository.getInstance()
     private val allCities: MutableList<ItemCity> = repository.allCities.toMutableList()
 
-    fun navToCity(view: View) {
-
+//    fun navToCity(view: View) {
 //        when(allCities[0].name){ // todo change as position of clicked recycle item
 //            "Astana" ->
 //                Navigation.findNavController(view).navigate(R.id.action_to_detailedCityFragment)
@@ -22,7 +21,7 @@ class SearchPageViewModel : ViewModel() {
 //                Navigation.findNavController(view).navigate(R.id.action_to_detailedCityFragment)
 //
 //        }
-    }
+//    }
 
     fun loadRecyclerView(view: View) {
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewSearch)
