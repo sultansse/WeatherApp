@@ -1,38 +1,27 @@
-package com.example.weatherapp.viewModel.searchPage
+package com.example.weatherapp.viewModel.searchPage.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import com.example.weatherapp.databinding.FragmentSearchBinding
+import com.example.weatherapp.databinding.FragmentDetailedCityBinding
 
+class DetailedCityFragment : Fragment() {
 
-class SearchFragment : Fragment() {
-
-    private var _binding: FragmentSearchBinding? = null
+    private var _binding: FragmentDetailedCityBinding? = null
     private val binding get() = _binding!!
-    val viewModel: SearchPageViewModel by viewModels()
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentSearchBinding.inflate(inflater, container, false)
+        _binding = FragmentDetailedCityBinding.inflate(layoutInflater)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        viewModel.loadRecyclerView(view)
-
-        //listener to go detailed fragment todo
-//        binding.root.recyclerItem.setOnClickListener(){
-//          viewModel.navToCity(view)
-//        }
 
 
     }
@@ -43,24 +32,3 @@ class SearchFragment : Fragment() {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

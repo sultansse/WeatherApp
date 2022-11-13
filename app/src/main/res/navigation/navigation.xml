@@ -23,7 +23,11 @@
         android:id="@+id/searchFragment"
         android:name="com.example.weatherapp.viewModel.searchPage.SearchFragment"
         android:label="Search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_to_detailedCityFragment"
+            app:destination="@id/detailedCityFragment" />
+    </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.weatherapp.viewModel.settingsPage.SettingsFragment"
@@ -37,6 +41,15 @@
         <action
             android:id="@+id/action_to_homeFragment"
             app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailedCityFragment"
+        android:name="com.example.weatherapp.viewModel.searchPage.fragments.DetailedCityFragment"
+        android:label="fragment_detailed_city"
+        tools:layout="@layout/fragment_detailed_city">
+        <action
+            android:id="@+id/action_to_searchFragment"
+            app:destination="@id/searchFragment" />
     </fragment>
 
 </navigation>

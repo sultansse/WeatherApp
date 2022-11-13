@@ -5,6 +5,7 @@ import com.example.weatherapp.repository.model.TemperatureType
 import com.example.weatherapp.viewModel.homePage.recyclers.TodayItem
 import com.example.weatherapp.viewModel.homePage.recyclers.WeekItem
 import com.example.weatherapp.viewModel.newsPage.recycler.RecyclerItem
+import com.example.weatherapp.viewModel.searchPage.recyclers.ItemCity
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 
@@ -37,23 +38,52 @@ class Repository private constructor() {
         }
     }
 
-//    val tabs = listOf(
-//        NewsType(
-//            title = R.string.news_title
-//            text = R.string.news_text
-//        ),
-//        NewsType(
-//
-//            title = R.string.news_title.toString(),
-//            text = R.string.news_text.toString()
-//        ),
-//        NewsType(
-//
-//            title = R.string.news_title.toString(),
-//            text = R.string.news_text.toString()
-//        ),
-//    )
+    // search page data =============================================
+    val allCities = listOf(
+        ItemCity(
+            "Astana",
+            "Astana (earlier - Akmolinsk, Tselinograd, Akmola, Nur-Sultan) - the capital of the Republic of Kazakhstan",
+            R.drawable.astana
+        ),
+        ItemCity(
+            "Aktobe",
+            "Aktobe (until 1999 Aktobe) is a city in Western Kazakhstan, the administrative center of the Aktobe region",
+            R.drawable.aktobe
+        ),
+        ItemCity(
+            "Karaganda",
+            "Karaganda is a city in Kazakhstan, the administrative center of the Karaganda region",
+            R.drawable.karaganda
+        ),
+        ItemCity(
+            "Almaty",
+            "Alma-Ata, Almaty (Almaty until 1921 - Verny) - a city of republican significance in Kazakhstan",
+            R.drawable.almaty
+        ),
+        ItemCity(
+            "Astana",
+            "Astana (earlier - Akmolinsk, Tselinograd, Akmola, Nur-Sultan) - the capital of the Republic of Kazakhstan",
+            R.drawable.astana
+        ),
+        ItemCity(
+            "Aktobe",
+            "Aktobe (until 1999 Aktobe) is a city in Western Kazakhstan, the administrative center of the Aktobe region",
+            R.drawable.aktobe
+        ),
+        ItemCity(
+            "Karaganda",
+            "Karaganda is a city in Kazakhstan, the administrative center of the Karaganda region",
+            R.drawable.karaganda
+        ),
+        ItemCity(
+            "Almaty",
+            "Alma-Ata, Almaty (Almaty until 1921 - Verny) - a city of republican significance in Kazakhstan",
+            R.drawable.almaty
+        )
+    )
 
+
+    // news page data =============================================
     val topNewsRecyclerData = listOf(
         RecyclerItem(
             /*image also*/
@@ -203,7 +233,7 @@ class Repository private constructor() {
     )
 
 
-    //  data from API network ==============================
+    // home page data =============================================
     val todayRecyclerData = listOf(
         TodayItem(
             R.string.temperature_per_hour,/*R.id.weatherIconPerHour,*/

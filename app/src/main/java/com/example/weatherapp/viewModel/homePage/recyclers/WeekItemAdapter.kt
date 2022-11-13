@@ -9,7 +9,6 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherapp.R
 import kotlinx.android.synthetic.main.item_week_details.view.*
-import kotlinx.coroutines.flow.callbackFlow
 
 
 class WeekItemAdapter(
@@ -44,10 +43,6 @@ class WeekItemAdapter(
         //listener to go detailed fragment
         holder.itemView.itemWeekDetails.setOnClickListener() {
             Navigation.findNavController(view).navigate(R.id.action_to_weekDetails)
-        }
-
-        callbackFlow<WeekItemAdapter> {
-            Navigation.findNavController(view).navigate(R.id.action_to_homeFragment)
         }
 
     }
