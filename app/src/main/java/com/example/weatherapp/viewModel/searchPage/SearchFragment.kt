@@ -27,12 +27,15 @@ class SearchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val searchView = binding.searchView
+        viewModel.searchViewFilter(view, searchView)
+
         viewModel.loadRecyclerView(view)
 
-        //listener to go detailed fragment todo
-//        binding.root.recyclerItem.setOnClickListener(){
-//          viewModel.navToCity(view)
-//        }
+/*        listener to go detailed fragment TODO { Navigation }
+        binding.root.recyclerItem.setOnClickListener(){
+          viewModel.navToCity(view)
+        }*/
 
 
     }

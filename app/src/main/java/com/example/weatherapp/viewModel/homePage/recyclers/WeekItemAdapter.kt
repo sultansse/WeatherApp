@@ -13,7 +13,8 @@ import kotlinx.android.synthetic.main.item_week_details.view.*
 
 class WeekItemAdapter(
     private val weekDataset: MutableList<WeekItem>,
-    private val view: View
+    private val view: View,
+//    private val itemClickListener: (WeekItem) -> Unit
 
 ) : RecyclerView.Adapter<WeekItemAdapter.ItemViewHolder>() {
 
@@ -44,6 +45,10 @@ class WeekItemAdapter(
         holder.itemView.itemWeekDetails.setOnClickListener() {
             Navigation.findNavController(view).navigate(R.id.action_to_weekDetails)
         }
+
+//        holder.itemView.itemWeekDetails.setOnClickListener() {
+//            itemClickListener(item)
+//        }
 
     }
 

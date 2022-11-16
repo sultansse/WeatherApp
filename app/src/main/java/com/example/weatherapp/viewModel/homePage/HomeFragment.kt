@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.weatherapp.databinding.FragmentHomeBinding
+import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_week_details.view.*
+import kotlinx.android.synthetic.main.item_week_details.view.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -37,9 +40,13 @@ class HomeFragment : Fragment() {
         viewModel.temperature.observe(viewLifecycleOwner) {
             binding.currentTempTextview.text = it
         }
+
+
 //        binding.tempWeekRecyclerview.itemWeekDetails.setOnClickListener {
 //            viewModel.navToWeekDetails(view)
 //        }
+
+
         viewModel.todayHourlyRecyclerview(view)
         viewModel.dailyWeekRecyclerview(view)
 

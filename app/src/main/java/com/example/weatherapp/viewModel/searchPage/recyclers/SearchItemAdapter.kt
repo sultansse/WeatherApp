@@ -13,13 +13,6 @@ class SearchItemAdapter(
     private var dataset: MutableList<ItemCity>
 ) : RecyclerView.Adapter<SearchItemAdapter.ItemViewHolder>() {
 
-//    val searchFilter: SearchFilter = SearchFilter()
-
-//    @SuppressLint("NotifyDataSetChanged")
-//    fun filter(filterList: MutableList<ItemCity>) {
-//        dataset = filterList
-//        notifyDataSetChanged()
-//    }
 
     class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val img: ImageView = view.findViewById(R.id.RecycleItemImage)
@@ -45,5 +38,36 @@ class SearchItemAdapter(
     override fun getItemCount(): Int {
         return dataset.size
     }
+
+//    override fun getFilter(): Filter {
+//        return object : Filter() {
+//            override fun performFiltering(constraint: CharSequence?): FilterResults {
+//                val charSearch = constraint.toString()
+//                if (charSearch.isEmpty()) {
+//                    dataset = countryList
+//                } else {
+//                    val resultList = ArrayList<String>()
+//                    for (row in countryList) {
+//                        if (row.lowercase(Locale.ROOT)
+//                                .contains(charSearch.lowercase(Locale.ROOT))
+//                        ) {
+//                            resultList.add(row)
+//                        }
+//                    }
+//                    dataset = resultList
+//                }
+//                val filterResults = FilterResults()
+//                filterResults.values = dataset
+//                return filterResults
+//            }
+//
+//            @Suppress("UNCHECKED_CAST")
+//            override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+//                dataset = results?.values as ArrayList<String>
+//                notifyDataSetChanged()
+//            }
+//
+//        }
+//    }
 
 }
