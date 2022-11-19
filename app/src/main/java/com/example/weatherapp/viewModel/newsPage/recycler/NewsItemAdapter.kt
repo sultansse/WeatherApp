@@ -7,9 +7,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherapp.R
 
-class ItemAdapter(
+class NewsItemAdapter(
     private val dataset: MutableList<RecyclerItem>
-) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
+) : RecyclerView.Adapter<NewsItemAdapter.ItemViewHolder>() {
 
 
     class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -33,8 +33,3 @@ class ItemAdapter(
     override fun getItemCount(): Int = dataset.size
 
 }
-
-data class NewsType(
-    val title: TextView,
-    val text: TextView
-)

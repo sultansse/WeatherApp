@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherapp.R
 import com.example.weatherapp.repository.Repository
 import com.example.weatherapp.viewModel.newsPage.recycler.DatasourceNews
-import com.example.weatherapp.viewModel.newsPage.recycler.ItemAdapter
+import com.example.weatherapp.viewModel.newsPage.recycler.NewsItemAdapter
 import com.example.weatherapp.viewModel.newsPage.recycler.RecyclerItem
 
 class NewsPageViewModel : ViewModel() {
@@ -24,7 +24,7 @@ class NewsPageViewModel : ViewModel() {
         }
 
         val newsRecyclerview = view.findViewById<RecyclerView>(R.id.newsRecyclerView)
-        newsRecyclerview.adapter = ItemAdapter(verticalNews!!)
+        newsRecyclerview.adapter = NewsItemAdapter(verticalNews!!)
     }
 
 }

@@ -35,6 +35,7 @@ class HomePageViewModel : ViewModel() {
         val weekDataset = RecyclerviewsDatasource().loadWeekViews()
         val weekRecyclerview = view.findViewById<RecyclerView>(R.id.tempWeekRecyclerview)
         weekRecyclerview.adapter = WeekItemAdapter(weekDataset, view)
+        //up parameter "view" because we have button that navigates from detailedFragment  to homeFragment
         weekRecyclerview.setHasFixedSize(true)
     }
 
