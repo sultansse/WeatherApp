@@ -1,21 +1,18 @@
 package com.example.weatherapp.viewModel.homePage
 
-import android.view.View
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
-import androidx.navigation.Navigation
-import androidx.recyclerview.widget.RecyclerView
-import com.example.weatherapp.R
 import com.example.weatherapp.repository.Repository
-import com.example.weatherapp.viewModel.homePage.recyclers.RecyclerviewsDatasource
-import com.example.weatherapp.viewModel.homePage.recyclers.TodayItemAdapter
-import com.example.weatherapp.viewModel.homePage.recyclers.WeekItemAdapter
+import com.example.weatherapp.viewModel.homePage.recyclers.TodayItem
+import com.example.weatherapp.viewModel.homePage.recyclers.WeekItem
 import kotlinx.coroutines.flow.combine
 
 class HomePageViewModel : ViewModel() {
 
-    private val repository = Repository.getInstance()
 
+    private val repository = Repository.getInstance()
 
     val temperature = combine(
         repository.temperatureToday,
@@ -24,24 +21,26 @@ class HomePageViewModel : ViewModel() {
         "$temperature${type.toFormattedString()}"
     }.asLiveData()
 
-    fun todayHourlyRecyclerview(view: View) {
-        val todayDataset = RecyclerviewsDatasource().loadTodayViews()
-        val todayRecyclerview = view.findViewById<RecyclerView>(R.id.temp_hourly_recyclerview)
-        todayRecyclerview.adapter = TodayItemAdapter(todayDataset)
-        todayRecyclerview.setHasFixedSize(true)
+
+    //here below is a problem
+    private var _todayDataset: MutableLiveData<List<TodayItem>> = MutableLiveData()
+    val todayDataset: MutableLiveData<List<TodayItem>> get() = _todayDataset
+
+    private var _weekDataset: MutableLiveData<List<WeekItem>> = MutableLiveData()
+    val weekDataset: LiveData<List<WeekItem>> get() = _weekDataset
+
+    init {
+        loadRecyclerData()
     }
 
-    fun dailyWeekRecyclerview(view: View) {
-        val weekDataset = RecyclerviewsDatasource().loadWeekViews()
-        val weekRecyclerview = view.findViewById<RecyclerView>(R.id.tempWeekRecyclerview)
-        weekRecyclerview.adapter = WeekItemAdapter(weekDataset, view)
-        //up parameter "view" because we have button that navigates from detailedFragment  to homeFragment
-        weekRecyclerview.setHasFixedSize(true)
+    private fun loadRecyclerData() {
+        val itemsToday = repository.todayRecyclerData
+        _todayDataset.value = itemsToday
+        val itemsWeek = repository.weekRecyclerData
+        _weekDataset.value = itemsWeek
     }
 
-    fun navToWeekDetails(view: View) {
-        Navigation.findNavController(view).navigate(R.id.action_to_weekDetails)
+    override fun onCleared() {
+        super.onCleared()
     }
-
-
 }

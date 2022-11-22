@@ -23,6 +23,8 @@ class NewsPageViewModel : ViewModel() {
             "other" -> verticalNews = DatasourceNews().loadOtherNews()
         }
 
+        //need use diffUtil
+        //observe that data changed and relocate below lines to Fragment class
         val newsRecyclerview = view.findViewById<RecyclerView>(R.id.newsRecyclerView)
         newsRecyclerview.adapter = NewsItemAdapter(verticalNews!!)
     }

@@ -44,38 +44,31 @@ class Repository private constructor() {
             "Astana",
             "Astana (earlier - Akmolinsk, Tselinograd, Akmola, Nur-Sultan) - the capital of the Republic of Kazakhstan",
             R.drawable.astana
-        ),
-        ItemCity(
+        ), ItemCity(
             "Aktobe",
             "Aktobe (until 1999 Aktobe) is a city in Western Kazakhstan, the administrative center of the Aktobe region",
             R.drawable.aktobe
-        ),
-        ItemCity(
+        ), ItemCity(
             "Karaganda",
             "Karaganda is a city in Kazakhstan, the administrative center of the Karaganda region",
             R.drawable.karaganda
-        ),
-        ItemCity(
+        ), ItemCity(
             "Almaty",
             "Alma-Ata, Almaty (Almaty until 1921 - Verny) - a city of republican significance in Kazakhstan",
             R.drawable.almaty
-        ),
-        ItemCity(
+        ), ItemCity(
             "Astana",
             "Astana (earlier - Akmolinsk, Tselinograd, Akmola, Nur-Sultan) - the capital of the Republic of Kazakhstan",
             R.drawable.astana
-        ),
-        ItemCity(
+        ), ItemCity(
             "Aktobe",
             "Aktobe (until 1999 Aktobe) is a city in Western Kazakhstan, the administrative center of the Aktobe region",
             R.drawable.aktobe
-        ),
-        ItemCity(
+        ), ItemCity(
             "Karaganda",
             "Karaganda is a city in Kazakhstan, the administrative center of the Karaganda region",
             R.drawable.karaganda
-        ),
-        ItemCity(
+        ), ItemCity(
             "Almaty",
             "Alma-Ata, Almaty (Almaty until 1921 - Verny) - a city of republican significance in Kazakhstan",
             R.drawable.almaty
@@ -90,68 +83,57 @@ class Repository private constructor() {
             R.string.news_title,
             R.string.news_text,
 
-            ),
-        RecyclerItem(
+            ), RecyclerItem(
             /*image also*/
             R.string.news_title,
             R.string.news_text,
 
-            ),
-        RecyclerItem(
+            ), RecyclerItem(
             /*image also*/
             R.string.news_title,
             R.string.news_text,
 
-            ),
-        RecyclerItem(
+            ), RecyclerItem(
             /*image also*/
             R.string.news_title,
             R.string.news_text,
 
-            ),
-        RecyclerItem(
+            ), RecyclerItem(
             /*image also*/
             R.string.news_title,
             R.string.news_text,
 
-            ),
-        RecyclerItem(
+            ), RecyclerItem(
             /*image also*/
             R.string.news_title,
             R.string.news_text,
 
-            ),
-        RecyclerItem(
+            ), RecyclerItem(
             /*image also*/
             R.string.news_title,
             R.string.news_text,
 
-            ),
-        RecyclerItem(
+            ), RecyclerItem(
             /*image also*/
             R.string.news_title,
             R.string.news_text,
 
-            ),
-        RecyclerItem(
+            ), RecyclerItem(
             /*image also*/
             R.string.news_title,
             R.string.news_text,
 
-            ),
-        RecyclerItem(
+            ), RecyclerItem(
             /*image also*/
             R.string.news_title,
             R.string.news_text,
 
-            ),
-        RecyclerItem(
+            ), RecyclerItem(
             /*image also*/
             R.string.news_title,
             R.string.news_text,
 
-            ),
-        RecyclerItem(
+            ), RecyclerItem(
             /*image also*/
             R.string.news_title,
             R.string.news_text,
@@ -159,26 +141,25 @@ class Repository private constructor() {
             )
 
     )
+
+
     val dailyNewsRecyclerData = listOf(
         RecyclerItem(
             /*image also*/
             R.string.news_title,
             R.string.news_text,
 
-            ),
-        RecyclerItem(
+            ), RecyclerItem(
             /*image also*/
             R.string.news_title,
             R.string.news_text,
 
-            ),
-        RecyclerItem(
+            ), RecyclerItem(
             /*image also*/
             R.string.news_title,
             R.string.news_text,
 
-            ),
-        RecyclerItem(
+            ), RecyclerItem(
             /*image also*/
             R.string.news_title,
             R.string.news_text,
@@ -192,38 +173,32 @@ class Repository private constructor() {
             R.string.news_title,
             R.string.news_text,
 
-            ),
-        RecyclerItem(
+            ), RecyclerItem(
             /*image also*/
             R.string.news_title,
             R.string.news_text,
 
-            ),
-        RecyclerItem(
+            ), RecyclerItem(
             /*image also*/
             R.string.news_title,
             R.string.news_text,
 
-            ),
-        RecyclerItem(
+            ), RecyclerItem(
             /*image also*/
             R.string.news_title,
             R.string.news_text,
 
-            ),
-        RecyclerItem(
+            ), RecyclerItem(
             /*image also*/
             R.string.news_title,
             R.string.news_text,
 
-            ),
-        RecyclerItem(
+            ), RecyclerItem(
             /*image also*/
             R.string.news_title,
             R.string.news_text,
 
-            ),
-        RecyclerItem(
+            ), RecyclerItem(
             /*image also*/
             R.string.news_title,
             R.string.news_text,
@@ -238,28 +213,22 @@ class Repository private constructor() {
         TodayItem(
             R.string.temperature_per_hour,/*R.id.weatherIconPerHour,*/
             R.string.each_time_today
-        ),
-        TodayItem(
+        ), TodayItem(
             R.string.temperature_per_hour,/*R.id.weatherIconPerHour,*/
             R.string.each_time_today
-        ),
-        TodayItem(
+        ), TodayItem(
             R.string.temperature_per_hour,/*R.id.weatherIconPerHour,*/
             R.string.each_time_today
-        ),
-        TodayItem(
+        ), TodayItem(
             R.string.temperature_per_hour,/*R.id.weatherIconPerHour,*/
             R.string.each_time_today
-        ),
-        TodayItem(
+        ), TodayItem(
             R.string.temperature_per_hour,/*R.id.weatherIconPerHour,*/
             R.string.each_time_today
-        ),
-        TodayItem(
+        ), TodayItem(
             R.string.temperature_per_hour,/*R.id.weatherIconPerHour,*/
             R.string.each_time_today
-        ),
-        TodayItem(
+        ), TodayItem(
             R.string.temperature_per_hour,/*R.id.weatherIconPerHour,*/
             R.string.each_time_today
         )
@@ -268,51 +237,52 @@ class Repository private constructor() {
     val weekRecyclerData = listOf(
         WeekItem(
             R.string.dayOfWeek,
+            R.drawable.cloudy,
             R.string.dayTempOfDayWeek,
             R.string.nightTempOfDayWeek
-        ),
-        WeekItem(
+        ), WeekItem(
             R.string.dayOfWeek,
+            R.drawable.cloudy,
             R.string.dayTempOfDayWeek,
             R.string.nightTempOfDayWeek
-        ),
-        WeekItem(
+        ), WeekItem(
             R.string.dayOfWeek,
+            R.drawable.cloudy,
             R.string.dayTempOfDayWeek,
             R.string.nightTempOfDayWeek
-        ),
-        WeekItem(
+        ), WeekItem(
             R.string.dayOfWeek,
+            R.drawable.sunny,
             R.string.dayTempOfDayWeek,
             R.string.nightTempOfDayWeek
-        ),
-        WeekItem(
+        ), WeekItem(
             R.string.dayOfWeek,
+            R.drawable.cloudy,
             R.string.dayTempOfDayWeek,
             R.string.nightTempOfDayWeek
-        ),
-        WeekItem(
+        ), WeekItem(
             R.string.dayOfWeek,
+            R.drawable.sunny,
             R.string.dayTempOfDayWeek,
             R.string.nightTempOfDayWeek
-        ),
-        WeekItem(
+        ), WeekItem(
             R.string.dayOfWeek,
+            R.drawable.sunny,
             R.string.dayTempOfDayWeek,
             R.string.nightTempOfDayWeek
-        ),
-        WeekItem(
+        ), WeekItem(
             R.string.dayOfWeek,
+            R.drawable.cloudy,
             R.string.dayTempOfDayWeek,
             R.string.nightTempOfDayWeek
-        ),
-        WeekItem(
+        ), WeekItem(
             R.string.dayOfWeek,
+            R.drawable.sunny,
             R.string.dayTempOfDayWeek,
             R.string.nightTempOfDayWeek
-        ),
-        WeekItem(
+        ), WeekItem(
             R.string.dayOfWeek,
+            R.drawable.cloudy,
             R.string.dayTempOfDayWeek,
             R.string.nightTempOfDayWeek
         )
