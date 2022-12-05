@@ -2,33 +2,38 @@ package com.example.weatherapp.viewModel.searchPage
 
 import android.view.View
 import androidx.appcompat.widget.SearchView
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherapp.R
 import com.example.weatherapp.repository.Repository
+import com.example.weatherapp.viewModel.homePage.recyclers.TodayItem
+import com.example.weatherapp.viewModel.homePage.recyclers.WeekItem
 import com.example.weatherapp.viewModel.searchPage.recyclers.ItemCity
 import com.example.weatherapp.viewModel.searchPage.recyclers.SearchItemAdapter
 
 class SearchPageViewModel : ViewModel() {
 
-    val repository = Repository.getInstance()
-
+    private val repository = Repository.getInstance()
     private val allCities: MutableList<ItemCity> = repository.allCities.toMutableList()
+    //here below is a problem
+    private var _cityDataset: MutableLiveData<List<ItemCity>> = MutableLiveData()
+    val cityDataset: MutableLiveData<List<ItemCity>> get() = _cityDataset
 
-/*    TODO { Navigation }
-    fun navToCity(view: View) {
-        when(allCities[0].name){ // todo change as position of clicked recycle item
-            "Astana" ->
-                Navigation.findNavController(view).navigate(R.id.action_to_detailedCityFragment)
-            "Aktobe" ->
-                Navigation.findNavController(view).navigate(R.id.action_to_detailedCityFragment)
 
-        }
-    }*/
+    init{
+        loadRecyclerData()
+    }
 
-    fun loadRecyclerView(view: View) {
-        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewSearch)
-        recyclerView.adapter = SearchItemAdapter(view, allCities);
+
+    override fun onCleared() {
+        super.onCleared()
+    }
+
+    private fun loadRecyclerData() {
+        val itemsToday = repository.allCities
+        _cityDataset.value = itemsToday
     }
 
     fun searchViewFilter(view: View, searchView: SearchView) {
@@ -45,6 +50,5 @@ class SearchPageViewModel : ViewModel() {
             }
         })
     }
-
 
 }
