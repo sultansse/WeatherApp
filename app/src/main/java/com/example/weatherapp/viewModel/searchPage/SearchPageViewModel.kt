@@ -9,13 +9,11 @@ import com.example.weatherapp.viewModel.searchPage.recyclers.ItemCity
 class SearchPageViewModel : ViewModel() {
 
     private val repository = Repository.getInstance()
-    private val allCities: MutableList<ItemCity> = repository.allCities.toMutableList()
-    //here below is a problem
     private var _cityDataset: MutableLiveData<List<ItemCity>> = MutableLiveData()
     val cityDataset: MutableLiveData<List<ItemCity>> get() = _cityDataset
 
 
-    init{
+    init {
         loadRecyclerData()
     }
 
