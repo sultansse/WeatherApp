@@ -1,17 +1,10 @@
 package com.example.weatherapp.viewModel.searchPage
 
-import android.view.View
 import androidx.appcompat.widget.SearchView
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.recyclerview.widget.RecyclerView
-import com.example.weatherapp.R
 import com.example.weatherapp.repository.Repository
-import com.example.weatherapp.viewModel.homePage.recyclers.TodayItem
-import com.example.weatherapp.viewModel.homePage.recyclers.WeekItem
 import com.example.weatherapp.viewModel.searchPage.recyclers.ItemCity
-import com.example.weatherapp.viewModel.searchPage.recyclers.SearchItemAdapter
 
 class SearchPageViewModel : ViewModel() {
 
@@ -36,7 +29,7 @@ class SearchPageViewModel : ViewModel() {
     }
 
 
-    fun searchViewFilter(view: View, searchView: SearchView) {
+    fun searchViewFilter(searchView: SearchView) {
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
 
             override fun onQueryTextSubmit(query: String?): Boolean {

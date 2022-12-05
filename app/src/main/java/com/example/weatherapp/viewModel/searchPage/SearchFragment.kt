@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.weatherapp.databinding.FragmentSearchBinding
-import com.example.weatherapp.viewModel.homePage.recyclers.WeekItemAdapter
 import com.example.weatherapp.viewModel.searchPage.recyclers.SearchItemAdapter
 
 class SearchFragment : Fragment() {
@@ -28,7 +27,7 @@ class SearchFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val searchView = binding.searchView
-        viewModel.searchViewFilter(view, searchView)
+        viewModel.searchViewFilter(searchView)
 
         val recyclerView = binding.recyclerViewSearch
         recyclerView.adapter = SearchItemAdapter();
@@ -72,18 +71,6 @@ class SearchFragment : Fragment() {
         }
     }
 
-    companion object {
-        private val allCities = listOf(
-            ItemsModal("Astana", "Astana (earlier - Akmolinsk, Tselinograd, Akmola, Nur-Sultan) - the capital of the Republic of Kazakhstan", R.drawable.astana),
-            ItemsModal("Aktobe", "Aktobe (until 1999 Aktobe) is a city in Western Kazakhstan, the administrative center of the Aktobe region", R.drawable.aktobe),
-            ItemsModal("Karaganda", "Karaganda is a city in Kazakhstan, the administrative center of the Karaganda region", R.drawable.karaganda),
-            ItemsModal("Almaty", "Alma-Ata, Almaty (Almaty until 1921 - Verny) - a city of republican significance in Kazakhstan", R.drawable.almaty),
-            ItemsModal("Astana", "Astana (earlier - Akmolinsk, Tselinograd, Akmola, Nur-Sultan) - the capital of the Republic of Kazakhstan", R.drawable.astana),
-            ItemsModal("Aktobe", "Aktobe (until 1999 Aktobe) is a city in Western Kazakhstan, the administrative center of the Aktobe region", R.drawable.aktobe),
-            ItemsModal("Karaganda", "Karaganda is a city in Kazakhstan, the administrative center of the Karaganda region", R.drawable.karaganda),
-            ItemsModal("Almaty", "Alma-Ata, Almaty (Almaty until 1921 - Verny) - a city of republican significance in Kazakhstan", R.drawable.almaty)
-        )
-    }
 */
 /*
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
