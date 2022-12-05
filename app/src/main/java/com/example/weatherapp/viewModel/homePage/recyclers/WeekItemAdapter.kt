@@ -16,8 +16,6 @@ import kotlinx.android.synthetic.main.item_week_details.view.*
 class WeekItemAdapter :
     ListAdapter<WeekItem, WeekItemAdapter.ItemViewHolder>(RowItemDiffCallbackWeek()) {
 
-    /*   private var _binding: ItemViewHolder? = null
-       private val binding get() = _binding!!*/
 
     class ItemViewHolder(row: View) : RecyclerView.ViewHolder(row) {
         val dayOfWeek: TextView = row.findViewById(R.id.day_of_week_textview)

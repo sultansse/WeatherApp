@@ -44,36 +44,109 @@ class Repository private constructor() {
             "Astana",
             "Astana (earlier - Akmolinsk, Tselinograd, Akmola, Nur-Sultan) - the capital of the Republic of Kazakhstan",
             R.drawable.astana
-        ), ItemCity(
+        ),
+        ItemCity(
             "Aktobe",
             "Aktobe (until 1999 Aktobe) is a city in Western Kazakhstan, the administrative center of the Aktobe region",
             R.drawable.aktobe
-        ), ItemCity(
+        ),
+        ItemCity(
             "Karaganda",
             "Karaganda is a city in Kazakhstan, the administrative center of the Karaganda region",
             R.drawable.karaganda
-        ), ItemCity(
+        ),
+        ItemCity(
             "Almaty",
             "Alma-Ata, Almaty (Almaty until 1921 - Verny) - a city of republican significance in Kazakhstan",
             R.drawable.almaty
-        ), ItemCity(
-            "Astana",
-            "Astana (earlier - Akmolinsk, Tselinograd, Akmola, Nur-Sultan) - the capital of the Republic of Kazakhstan",
-            R.drawable.astana
-        ), ItemCity(
-            "Aktobe",
-            "Aktobe (until 1999 Aktobe) is a city in Western Kazakhstan, the administrative center of the Aktobe region",
-            R.drawable.aktobe
-        ), ItemCity(
-            "Karaganda",
-            "Karaganda is a city in Kazakhstan, the administrative center of the Karaganda region",
-            R.drawable.karaganda
-        ), ItemCity(
-            "Almaty",
-            "Alma-Ata, Almaty (Almaty until 1921 - Verny) - a city of republican significance in Kazakhstan",
-            R.drawable.almaty
+        ),
+        ItemCity(
+            "Shymkent",
+            "Shymkent (a city in the south of Kazakhstan, one of the three cities of the country",
+            R.drawable.shymkent
+        ),
+        ItemCity(
+            "Taraz",
+            "Taraz (formerly Zhambyl) is the administrative center of Zhambyl Province in Kazakhstan",
+            R.drawable.taraz
+        ),
+        ItemCity(
+            "Pavlodar",
+            "Pavlodar is a city located in northeastern Kazakhstan, 450 km northeast of the capital Astana",
+            R.drawable.pavlodar
+        ),
+        ItemCity(
+            "Ust-Kamenogorsk",
+            "Ust-Kamenogorsk (Kazakh: Öskemen Sound) is the largest city in eastern Kazakhstan",
+            R.drawable.oskemen
+        ),
+        ItemCity(
+            "Semey",
+            "Semey (until 2007 - Semipalatinsk) is a city in eastern Kazakhstanlocated on both banks of the Irtysh River",
+            R.drawable.semey
+        ),
+        ItemCity(
+            "Atyrau",
+            "Atyrau (until 1991 - Guryev) is a city in Kazakhstan, the administrative center of Atyrau Region",
+            R.drawable.atyrau
+        ),
+        ItemCity(
+            "Kyzylorda",
+            "Kyzylorda (formerly Kamysty, Ak-Mechet, Perovsk, Kzyl-Orda) is a city in Kazakhstan",
+            R.drawable.kyzylorda
+        ),
+        ItemCity(
+            "Kostanay",
+            "Kostanay (formerly - Nikolaevsk, Kostanay - a city in Kazakhstan, the administrative center of Kostanay region",
+            R.drawable.kostanay
+        ),
+        ItemCity(
+            "Uralsk",
+            "Uralsk or Oral (until 1775 - Yaitsky town) is a city in the European part of Kazakhstan",
+            R.drawable.oral
+        ),
+        ItemCity(
+            "Petropavlovsk",
+            "Petropavlovsk is a city in northern Kazakhstan, the administrative center of the NKR",
+            R.drawable.pavlodar
+        ),
+        ItemCity(
+            "Aktau",
+            "Aktau (Kazakh: Sound Aktau, Aqtau; White Mountain) is a port city in the south-west of Kazakhstan",
+            R.drawable.aktau
+        ),
+        ItemCity(
+            "Turkestan",
+            "Turkestan is a city in southern Kazakhstan, near the Syr Darya River",
+            R.drawable.turkistan
+        ),
+        ItemCity(
+            "Temirtau",
+            "Temirtau (Kazakh: Теміртау) is a city in Kazakhstan, located in the Karaganda Region",
+            R.drawable.temirtau
+        ),
+        ItemCity(
+            "Kokshetau",
+            "Kokshetau (until 1993 - Kokchetav) is a city in Kazakhstan, since 1999",
+            R.drawable.kokshetau
+        ),
+        ItemCity(
+            "Taldykorgan",
+            "Taldykorgan (until 1993 - Taldy-Kurgan, until 1920 - Gavrilovka) is a city in the south-east",
+            R.drawable.taldykorgan
+        ),
+        ItemCity(
+            "Ekibastuz",
+            "Ekibastuz is a city of regional subordination in the west of the Pavlodar region of Kazakhstan",
+            R.drawable.ekibastuz
+        ),
+        ItemCity(
+            "Rudnyi",
+            "A city on the Tobol River in the Kostanay region of Kazakhstan",
+            R.drawable.rudnyi
+        ),
+
         )
-    )
 
 
     // news page data =============================================
