@@ -5,9 +5,6 @@
     android:id="@+id/recyclerItem"
     android:layout_margin="6dp"
     android:outlineProvider="none"
-    android:clickable="true"
-    android:focusable="true"
-    android:longClickable="true"
     card_view:cardBackgroundColor="@color/backgroundTransparent"
     card_view:cardCornerRadius="8dp">
 
