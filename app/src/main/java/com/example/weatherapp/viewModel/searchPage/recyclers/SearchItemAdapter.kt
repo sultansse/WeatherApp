@@ -5,13 +5,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherapp.R
 
-class SearchItemAdapter(
-    private val view: View,
-    private var dataset: MutableList<ItemCity>
-) : RecyclerView.Adapter<SearchItemAdapter.ItemViewHolder>() {
+class SearchItemAdapter :
+    ListAdapter<ItemCity, SearchItemAdapter.ItemViewHolder>(RowItemDiffCallbackCity()) {
 
 
     class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -20,7 +19,6 @@ class SearchItemAdapter(
         val desc: TextView = view.findViewById(R.id.RecycleItemDesc)
     }
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         val adapterLayout =
             LayoutInflater.from(parent.context).inflate(R.layout.search_items, parent, false)
@@ -28,16 +26,13 @@ class SearchItemAdapter(
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        val item = dataset[position]
+        val item = getItem(position)
 
         holder.name.text = item.name
         holder.desc.text = item.desc
         holder.img.setImageResource(item.image)
     }
 
-    override fun getItemCount(): Int {
-        return dataset.size
-    }
 
 //    override fun getFilter(): Filter {
 //        return object : Filter() {
@@ -71,3 +66,4 @@ class SearchItemAdapter(
 //    }
 
 }
+

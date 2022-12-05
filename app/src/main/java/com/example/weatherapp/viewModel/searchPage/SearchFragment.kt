@@ -4,18 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.weatherapp.databinding.FragmentSearchBinding
-
+import com.example.weatherapp.viewModel.homePage.recyclers.WeekItemAdapter
+import com.example.weatherapp.viewModel.searchPage.recyclers.SearchItemAdapter
 
 class SearchFragment : Fragment() {
 
+    val viewModel: SearchPageViewModel by viewModels()
     private var _binding: FragmentSearchBinding? = null
     private val binding get() = _binding!!
-    val viewModel: SearchPageViewModel by viewModels()
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,7 +30,14 @@ class SearchFragment : Fragment() {
         val searchView = binding.searchView
         viewModel.searchViewFilter(view, searchView)
 
-        viewModel.loadRecyclerView(view)
+        val recyclerView = binding.recyclerViewSearch
+        recyclerView.adapter = SearchItemAdapter();
+        recyclerView.setHasFixedSize(true)
+
+        viewModel.cityDataset.observe(viewLifecycleOwner) {
+            (recyclerView.adapter as SearchItemAdapter).submitList(it)
+        }
+
         /*val itemsAdapter = ItemsAdapter(this);
         itemsAdapter.submitList(allCities)
         recyclerViewSearch.layoutManager = LinearLayoutManager(requireContext())
