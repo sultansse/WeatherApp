@@ -43,19 +43,6 @@
         android:id="@+id/detailedCityFragment"
         android:name="com.example.weatherapp.viewModel.searchPage.fragments.DetailedCityFragment"
         android:label="fragment_detailed_city"
-        tools:layout="@layout/fragment_detailed_city">
-        <action
-            android:id="@+id/action_to_searchFragment"
-            app:destination="@id/searchFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/detailedCityFragment"
-        android:name="com.example.weatherapp.viewModel.searchPage.fragments.DetailedCityFragment"
-        android:label="fragment_detailed_city"
-        tools:layout="@layout/fragment_detailed_city">
-        <action
-            android:id="@+id/action_to_searchFragment"
-            app:destination="@id/searchFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_detailed_city" />
 
 </navigation>

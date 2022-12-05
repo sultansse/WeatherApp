@@ -26,15 +26,15 @@ class SearchPageViewModel : ViewModel() {
         loadRecyclerData()
     }
 
+    private fun loadRecyclerData() {
+        val itemsToday = repository.allCities
+        _cityDataset.value = itemsToday
+    }
 
     override fun onCleared() {
         super.onCleared()
     }
 
-    private fun loadRecyclerData() {
-        val itemsToday = repository.allCities
-        _cityDataset.value = itemsToday
-    }
 
     fun searchViewFilter(view: View, searchView: SearchView) {
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
