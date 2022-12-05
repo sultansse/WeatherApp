@@ -1,17 +1,20 @@
 package com.example.weatherapp.viewModel.searchPage.recyclers
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.ListAdapter
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherapp.R
+import kotlinx.android.synthetic.main.item_week_details.view.*
+import kotlinx.android.synthetic.main.search_items.view.*
 
 class SearchItemAdapter :
     ListAdapter<ItemCity, SearchItemAdapter.ItemViewHolder>(RowItemDiffCallbackCity()) {
-
 
     class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val img: ImageView = view.findViewById(R.id.RecycleItemImage)
@@ -27,10 +30,14 @@ class SearchItemAdapter :
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = getItem(position)
-
         holder.name.text = item.name
         holder.desc.text = item.desc
         holder.img.setImageResource(item.image)
+
+        holder.itemView.constraint.setOnClickListener() {
+            Log.d("SearchItemAdapter", "onBindViewHolder: navigate listener ")
+            Navigation.findNavController(holder.itemView).navigate(R.id.action_to_detailedCityFragment)
+        }
     }
 
 
