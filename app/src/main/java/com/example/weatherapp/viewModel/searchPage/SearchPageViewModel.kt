@@ -1,6 +1,6 @@
 package com.example.weatherapp.viewModel.searchPage
 
-import androidx.appcompat.widget.SearchView
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.weatherapp.repository.Repository
@@ -10,36 +10,30 @@ class SearchPageViewModel : ViewModel() {
 
     private val repository = Repository.getInstance()
     private var _cityDataset: MutableLiveData<List<ItemCity>> = MutableLiveData()
-    val cityDataset: MutableLiveData<List<ItemCity>> get() = _cityDataset
+    val cityDataset: LiveData<List<ItemCity>> get() = _cityDataset
 
 
     init {
         loadRecyclerData()
     }
 
-    private fun loadRecyclerData() {
-        val itemsToday = repository.allCities
-        _cityDataset.value = itemsToday
-    }
-
     override fun onCleared() {
         super.onCleared()
     }
 
+    fun onSearchDataChange(query: String?) {
+        var temp: MutableList<ItemCity> = repository.allCities.toMutableList()
+        if (query.toString() != "") {
+            temp =
+                temp.filter { city -> city.name.lowercase().contains(query.toString().lowercase()) }
+                    .toMutableList()
+        }
+        _cityDataset.value = temp
+    }
 
-    fun searchViewFilter(searchView: SearchView) {
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                return false
-            }
-
-            override fun onQueryTextChange(newText: String?): Boolean {
-//                adapter.filter.filter(newText)
-
-                return false
-            }
-        })
+    private fun loadRecyclerData() {
+        val itemsToday = repository.allCities
+        _cityDataset.value = itemsToday
     }
 
 }
