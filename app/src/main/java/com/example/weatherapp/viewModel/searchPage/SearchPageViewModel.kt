@@ -1,54 +1,39 @@
 package com.example.weatherapp.viewModel.searchPage
 
-import android.view.View
-import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.recyclerview.widget.RecyclerView
-import com.example.weatherapp.R
 import com.example.weatherapp.repository.Repository
-import com.example.weatherapp.viewModel.homePage.recyclers.TodayItem
-import com.example.weatherapp.viewModel.homePage.recyclers.WeekItem
 import com.example.weatherapp.viewModel.searchPage.recyclers.ItemCity
-import com.example.weatherapp.viewModel.searchPage.recyclers.SearchItemAdapter
 
 class SearchPageViewModel : ViewModel() {
 
     private val repository = Repository.getInstance()
-    private val allCities: MutableList<ItemCity> = repository.allCities.toMutableList()
-    //here below is a problem
     private var _cityDataset: MutableLiveData<List<ItemCity>> = MutableLiveData()
-    val cityDataset: MutableLiveData<List<ItemCity>> get() = _cityDataset
+    val cityDataset: LiveData<List<ItemCity>> get() = _cityDataset
 
 
-    init{
+    init {
         loadRecyclerData()
-    }
-
-    private fun loadRecyclerData() {
-        val itemsToday = repository.allCities
-        _cityDataset.value = itemsToday
     }
 
     override fun onCleared() {
         super.onCleared()
     }
 
+    fun onSearchDataChange(query: String?) {
+        var temp: MutableList<ItemCity> = repository.allCities.toMutableList()
+        if (query.toString() != "") {
+            temp =
+                temp.filter { city -> city.name.lowercase().contains(query.toString().lowercase()) }
+                    .toMutableList()
+        }
+        _cityDataset.value = temp
+    }
 
-    fun searchViewFilter(view: View, searchView: SearchView) {
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                return false
-            }
-
-            override fun onQueryTextChange(newText: String?): Boolean {
-//                adapter.filter.filter(newText)
-
-                return false
-            }
-        })
+    private fun loadRecyclerData() {
+        val itemsToday = repository.allCities
+        _cityDataset.value = itemsToday
     }
 
 }

@@ -1,16 +1,14 @@
 package com.example.weatherapp.viewModel.searchPage.recyclers
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.recyclerview.widget.ListAdapter
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherapp.R
-import kotlinx.android.synthetic.main.item_week_details.view.*
 import kotlinx.android.synthetic.main.search_items.view.*
 
 class SearchItemAdapter :
@@ -35,42 +33,10 @@ class SearchItemAdapter :
         holder.img.setImageResource(item.image)
 
         holder.itemView.constraint.setOnClickListener() {
-            Log.d("SearchItemAdapter", "onBindViewHolder: navigate listener ")
-            Navigation.findNavController(holder.itemView).navigate(R.id.action_to_detailedCityFragment)
+            Navigation.findNavController(holder.itemView)
+                .navigate(R.id.action_to_detailedCityFragment)
         }
     }
-
-
-//    override fun getFilter(): Filter {
-//        return object : Filter() {
-//            override fun performFiltering(constraint: CharSequence?): FilterResults {
-//                val charSearch = constraint.toString()
-//                if (charSearch.isEmpty()) {
-//                    dataset = countryList
-//                } else {
-//                    val resultList = ArrayList<String>()
-//                    for (row in countryList) {
-//                        if (row.lowercase(Locale.ROOT)
-//                                .contains(charSearch.lowercase(Locale.ROOT))
-//                        ) {
-//                            resultList.add(row)
-//                        }
-//                    }
-//                    dataset = resultList
-//                }
-//                val filterResults = FilterResults()
-//                filterResults.values = dataset
-//                return filterResults
-//            }
-//
-//            @Suppress("UNCHECKED_CAST")
-//            override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
-//                dataset = results?.values as ArrayList<String>
-//                notifyDataSetChanged()
-//            }
-//
-//        }
-//    }
 
 }
 
