@@ -6,6 +6,7 @@
     <string name="news_fragment">News Fragment</string>
     <string name="search">Search</string>
     <string name="city_name">City Name</string>
+    <string name="city">City</string>
 
     <string-array name="DailyWeather">
         <item>Алматы</item>
