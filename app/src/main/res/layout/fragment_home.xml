@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/gradient"
         android:orientation="vertical"
-        tools:context=".viewModel.homePage.HomeFragment">
+        tools:context=".ui.homePage.HomeFragment">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/current_weather_imageview"
@@ -216,9 +216,6 @@
             android:layout_marginVertical="5dp"
             android:orientation="vertical"
             android:scrollbars="vertical"
-            android:longClickable="true"
-            android:clickable="true"
-            android:focusable="true"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="@+id/week_block_view"
             app:layout_constraintEnd_toEndOf="@+id/week_block_view"
