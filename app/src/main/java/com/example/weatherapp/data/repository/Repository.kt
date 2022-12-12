@@ -1,7 +1,7 @@
 package com.example.weatherapp.data.repository
 
 import com.example.weatherapp.R
-import com.example.weatherapp.data.database.TemperatureType
+import com.example.weatherapp.domain.TemperatureType
 import com.example.weatherapp.ui.homePage.recyclers.TodayItem
 import com.example.weatherapp.ui.homePage.recyclers.WeekItem
 import com.example.weatherapp.ui.newsPage.recycler.RecyclerItem

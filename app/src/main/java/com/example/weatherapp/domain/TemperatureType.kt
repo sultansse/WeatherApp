@@ -1,4 +1,4 @@
-package com.example.weatherapp.data.database
+package com.example.weatherapp.domain
 
 enum class TemperatureType {
     Celcius, Faranheit;

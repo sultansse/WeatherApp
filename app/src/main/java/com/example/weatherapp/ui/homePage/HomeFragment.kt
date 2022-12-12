@@ -71,6 +71,8 @@ class HomeFragment : Fragment() {
             weekAdapter.submitList(it)
         }
 
+        viewModel.getweather(view)
+
     }
 
 
