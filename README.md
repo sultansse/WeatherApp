@@ -1,3 +1,3 @@
 # WeatherApp
-Hi there! its our team project, we are doing it from scratch, not just coping any video. hopeit will nice and i will like it!
-.
+Это приложение которое мы создовали в команде, это был проект для курса в СДУ
+хочу отметить, что 90% работы сделал \ переделал *Я*, так как, моим team-member'ам это было вообще не нужно (они не Android разработчики) 
